@@ -31,7 +31,7 @@
   - **1-Click Plain-Text Copy**: Instantly copy formatted text for pasting into application portals.
   - **Google XYZ Metric Formula**: Projects structured with clear impact metrics.
 - ⚡ **Dynamic Hero & Typing Animation**: Real-time cycling between SDE, AI Engineer, RESQONE AI architect, and LeetCode problem solver roles.
-- 🚑 **Mission-Critical SDE Architecture Viewer**: Interactive system design viewer for **RESQONE AI** (Sensor Radar -> WebSocket Event Mesh -> 3D Green Corridor Navigation) and **Pulsevein** (rPPG signal analysis).
+- 🚑 **Distributed SDE Architecture Viewer**: Interactive system design viewer for **RESQONE AI** (Sensor Radar -> WebSocket Event Mesh -> 3D Green Corridor Navigation) and **Pulsevein** (rPPG signal analysis).
 - 🏆 **Comprehensive Project Showcase**: Featuring all 7 shipped AI and system platforms with live Vercel deployments and GitHub repos.
 - ⚔️ **Competitive Programming & Credentials**: LeetCode, HackerRank, 5+ hackathon awards (1st Prize winner), and 6 Infosys/NIPAM certifications.
 

@@ -44,7 +44,7 @@ export default function ArchitectureViewer() {
               <span>SDE System Design & Architecture</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-black font-display tracking-tight text-white uppercase">
-              Mission-Critical Engineering
+              System Design & Architecture
             </h2>
           </div>
           <p className="mt-4 md:mt-0 text-zinc-400 text-sm md:text-base font-light max-w-md">

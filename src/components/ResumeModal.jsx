@@ -21,7 +21,7 @@ HackerRank: https://www.hackerrank.com/profile/srinivaspalnati1
 ================================================================================
 PROFESSIONAL SUMMARY
 ================================================================================
-Aspiring Software Development Engineer (SDE) & AI/ML Engineer with a proven track record of designing, building, and deploying 7+ production-grade AI platforms and mission-critical systems. Strong foundation in Data Structures & Algorithms (Java/Python), Object-Oriented Design, Distributed Systems fundamentals, and Full-Stack Engineering. Experienced in building high-throughput event meshes, real-time sensor fusion algorithms, and low-latency computer vision pipelines. First-prize hackathon winner with demonstrated capability to lead end-to-end product development.
+Aspiring Software Development Engineer (SDE) & AI/ML Engineer with a proven track record of designing, building, and deploying 7+ production-grade AI platforms and scalable systems. Strong foundation in Data Structures & Algorithms (Java/Python), Object-Oriented Design, Distributed Systems fundamentals, and Full-Stack Engineering. Experienced in building high-throughput event meshes, real-time sensor fusion algorithms, and low-latency computer vision pipelines. First-prize hackathon winner with demonstrated capability to lead end-to-end product development.
 
 ================================================================================
 TECHNICAL SKILLS
@@ -236,7 +236,7 @@ VERIFIED CERTIFICATIONS (LINKEDIN VERIFIED)
                   Professional Summary
                 </h2>
                 <p className="text-xs md:text-sm text-zinc-800 leading-relaxed text-justify">
-                  Aspiring Software Development Engineer (SDE) and AI/ML Engineer with deep expertise in designing, building, and deploying 7+ production-grade AI platforms and mission-critical systems. Strong foundation in <strong>Data Structures & Algorithms (Java/Python)</strong>, Object-Oriented Design, Distributed Systems fundamentals, and Full-Stack Engineering. Proven experience engineering sensor-fusion emergency response platforms, real-time WebSocket state synchronization, and sub-second computer vision inference pipelines. First-prize hackathon winner with demonstrated capability to lead end-to-end product architecture.
+                  Aspiring Software Development Engineer (SDE) and AI/ML Engineer with deep expertise in designing, building, and deploying 7+ production-grade AI platforms and scalable systems. Strong foundation in <strong>Data Structures & Algorithms (Java/Python)</strong>, Object-Oriented Design, Distributed Systems fundamentals, and Full-Stack Engineering. Proven experience engineering sensor-fusion emergency response platforms, real-time WebSocket state synchronization, and sub-second computer vision inference pipelines. First-prize hackathon winner with demonstrated capability to lead end-to-end product architecture.
                 </p>
               </section>
 

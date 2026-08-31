@@ -22,7 +22,7 @@ const GithubIcon = ({ size = 20, ...props }) => (
 
 const phrases = [
   "Aspiring SDE & AI/ML Engineer",
-  "Architect of RESQONE AI (Live Emergency Rescue)",
+  "Architect of RESQONE AI (Emergency Rescue)",
   "Deepfake Detection with rPPG Signals",
   "Java & DSA Mastery on LeetCode",
   "1st Prize Hackathon Winner @ NRI IT"
@@ -129,14 +129,14 @@ export default function Hero({ onOpenResume }) {
           playsInline
         />
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/45" />
       </div>
 
       {/* Main Layout */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full flex items-center">
         
         {/* Left Content */}
-        <div className="lg:col-span-8 flex flex-col justify-center text-left">
+        <div className="max-w-2xl lg:max-w-3xl flex flex-col justify-center text-left">
           
           {/* Top Badge: Goal & Availability */}
           <motion.div
@@ -155,22 +155,22 @@ export default function Hero({ onOpenResume }) {
             </div>
           </motion.div>
 
-          {/* Dynamic Headline */}
+          {/* Dynamic Headline with Decreased, Balanced Font Size */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 2.3 }}
             className="space-y-2"
           >
-            <div className="text-xl sm:text-2xl font-mono text-zinc-300 font-medium">
+            <div className="text-lg sm:text-xl font-mono text-zinc-300 font-medium">
               Hello, I'm <span className="text-white font-bold">Palnati Srinivas</span> 👋
             </div>
 
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-black font-display tracking-tight text-white leading-[1.05] uppercase min-h-[120px] sm:min-h-[140px] flex flex-col justify-center">
-              <span className="text-stroke-white text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-white leading-tight uppercase min-h-[56px] sm:min-h-[72px] flex items-center flex-wrap">
+              <span className="text-stroke-white text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.05)]">
                 {phrases[textIndex].substring(0, charIndex)}
               </span>
-              <span className="inline-block w-2.5 h-10 md:h-14 bg-[#FF2A2A] ml-1 animate-pulse" />
+              <span className="inline-block w-2 h-6 sm:h-8 md:h-10 bg-[#FF2A2A] ml-1.5 animate-pulse shrink-0" />
             </h1>
           </motion.div>
 
@@ -179,7 +179,7 @@ export default function Hero({ onOpenResume }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 2.5 }}
-            className="mt-4 text-base md:text-lg text-white/80 max-w-2xl font-sans font-light leading-relaxed drop-shadow-md border-l-2 border-[#FF2A2A] pl-4 italic"
+            className="mt-4 text-sm sm:text-base md:text-lg text-white/80 max-w-2xl font-sans font-light leading-relaxed drop-shadow-md border-l-2 border-[#FF2A2A] pl-4 italic"
           >
             "Building systems that don't just compute — they respond, protect, and save time when it matters most."
           </motion.p>
@@ -188,7 +188,7 @@ export default function Hero({ onOpenResume }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 2.6 }}
-            className="mt-3 text-sm md:text-base text-zinc-300 max-w-xl font-light leading-relaxed"
+            className="mt-3 text-xs sm:text-sm md:text-base text-zinc-300 max-w-xl font-light leading-relaxed"
           >
             Computer Science Engineering student specializing in high-throughput backend systems, Java & DSA algorithm design, and production AI platforms like <strong className="text-white font-semibold">RESQONE AI</strong> and <strong className="text-white font-semibold">Pulsevein</strong>.
           </motion.p>
@@ -203,7 +203,7 @@ export default function Hero({ onOpenResume }) {
             {/* ATS Resume CTA */}
             <button
               onClick={onOpenResume}
-              className="px-8 py-4 rounded-full bg-[#FF2A2A] text-white font-bold uppercase tracking-wider text-xs hover:bg-[#ff4444] hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_10px_30px_rgba(255,42,42,0.4)] cursor-pointer flex items-center space-x-2"
+              className="px-7 py-3.5 rounded-full bg-[#FF2A2A] text-white font-bold uppercase tracking-wider text-xs hover:bg-[#ff4444] hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_10px_30px_rgba(255,42,42,0.4)] cursor-pointer flex items-center space-x-2"
             >
               <FileText className="w-4 h-4" />
               <span>ATS Resume (Product SDE)</span>
@@ -212,7 +212,7 @@ export default function Hero({ onOpenResume }) {
             {/* Explore Projects */}
             <button
               onClick={() => scrollToSection('projects')}
-              className="px-7 py-4 rounded-full border border-white/20 glass-panel text-white font-bold uppercase tracking-wider text-xs hover:bg-white/10 active:scale-95 transition-all duration-300 cursor-pointer flex items-center space-x-2"
+              className="px-6 py-3.5 rounded-full border border-white/20 glass-panel text-white font-bold uppercase tracking-wider text-xs hover:bg-white/10 active:scale-95 transition-all duration-300 cursor-pointer flex items-center space-x-2"
             >
               <span>Explore 7+ AI Systems</span>
               <ArrowRight className="w-4 h-4" />
@@ -223,10 +223,10 @@ export default function Hero({ onOpenResume }) {
               href="https://github.com/srinivaspalnati22-png"
               target="_blank"
               rel="noreferrer"
-              className="p-3.5 rounded-full border border-white/20 glass-panel text-zinc-300 hover:text-white hover:border-white transition-all duration-300 cursor-pointer"
+              className="p-3 rounded-full border border-white/20 glass-panel text-zinc-300 hover:text-white hover:border-white transition-all duration-300 cursor-pointer"
               title="Visit GitHub @srinivaspalnati22-png"
             >
-              <GithubIcon size={20} />
+              <GithubIcon size={18} />
             </a>
           </motion.div>
 
@@ -235,7 +235,7 @@ export default function Hero({ onOpenResume }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 2.9 }}
-            className="mt-10 pt-6 border-t border-white/10 flex flex-wrap items-center gap-6 text-xs font-mono text-zinc-400"
+            className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center gap-6 text-xs font-mono text-zinc-400"
           >
             <div className="flex items-center space-x-2">
               <Award className="w-4 h-4 text-amber-400" />
@@ -251,52 +251,6 @@ export default function Hero({ onOpenResume }) {
             </div>
           </motion.div>
 
-        </div>
-
-        {/* Right Side: Quick Stats Spotlight Card */}
-        <div className="lg:col-span-4 hidden lg:block">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 2.5 }}
-            className="p-6 rounded-3xl bg-zinc-950/70 border border-white/10 shadow-2xl backdrop-blur-xl space-y-5"
-          >
-            <div className="flex items-center justify-between pb-3 border-b border-white/10">
-              <div className="flex items-center space-x-2">
-                <span className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-xs font-mono text-zinc-300 font-bold uppercase">System Profile</span>
-              </div>
-              <span className="text-[10px] font-mono text-zinc-500">v2.4 // 2026</span>
-            </div>
-
-            <div className="space-y-3 text-xs font-mono">
-              <div className="p-3 rounded-xl bg-white/5 border border-white/5 flex justify-between items-center">
-                <span className="text-zinc-400">Primary Goal</span>
-                <span className="text-[#FF2A2A] font-bold">Product SDE / AI</span>
-              </div>
-              <div className="p-3 rounded-xl bg-white/5 border border-white/5 flex justify-between items-center">
-                <span className="text-zinc-400">Flagship</span>
-                <a href="https://resqone-ai-app.vercel.app" target="_blank" rel="noreferrer" className="text-white font-bold underline hover:text-[#FF2A2A]">
-                  RESQONE AI ↗
-                </a>
-              </div>
-              <div className="p-3 rounded-xl bg-white/5 border border-white/5 flex justify-between items-center">
-                <span className="text-zinc-400">Core Stack</span>
-                <span className="text-white font-bold">Java, Python, React</span>
-              </div>
-              <div className="p-3 rounded-xl bg-white/5 border border-white/5 flex justify-between items-center">
-                <span className="text-zinc-400">Hackathon Wins</span>
-                <span className="text-amber-400 font-bold">1st Prize Winner</span>
-              </div>
-            </div>
-
-            <button
-              onClick={onOpenResume}
-              className="w-full py-3 rounded-xl bg-white text-black font-mono font-bold uppercase tracking-wider text-xs hover:bg-zinc-200 transition-all cursor-pointer shadow"
-            >
-              Open ATS Resume
-            </button>
-          </motion.div>
         </div>
 
       </div>
