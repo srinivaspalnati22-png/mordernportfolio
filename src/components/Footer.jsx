@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowUpRight, FileText, Code2 } from 'lucide-react';
 
 const GithubIcon = ({ size = 20, ...props }) => (
   <svg 
@@ -37,7 +37,7 @@ const LinkedinIcon = ({ size = 20, ...props }) => (
   </svg>
 );
 
-export default function Footer() {
+export default function Footer({ onOpenResume }) {
   const footerRef = useRef(null);
   
   const { scrollYProgress } = useScroll({
@@ -45,7 +45,6 @@ export default function Footer() {
     offset: ["start end", "end end"]
   });
 
-  // Parallax / size reveal for giant branding text
   const textScale = useTransform(scrollYProgress, [0, 1], [0.92, 1]);
   const textOpacity = useTransform(scrollYProgress, [0, 0.8], [0.3, 1]);
 
@@ -67,37 +66,46 @@ export default function Footer() {
           {/* Left Column: Creative Services */}
           <div className="space-y-4">
             <h4 className="text-[10px] font-mono uppercase tracking-widest text-[#FF2A2A] font-black">
-              Core Expertise
+              Engineering Pillars
             </h4>
             <div className="space-y-2 text-xs font-mono tracking-wider text-zinc-400 uppercase">
-              <p className="hover:text-white transition-colors duration-300">AI/ML Model Design</p>
-              <p className="hover:text-white transition-colors duration-300">Full-Stack Web Dev</p>
-              <p className="hover:text-white transition-colors duration-300">Flutter Mobile Apps</p>
-              <p className="hover:text-white transition-colors duration-300">Cybersecurity Tech</p>
+              <p className="hover:text-white transition-colors duration-300">Data Structures & Algorithms</p>
+              <p className="hover:text-white transition-colors duration-300">Distributed Event Meshes</p>
+              <p className="hover:text-white transition-colors duration-300">AI / ML & Computer Vision</p>
+              <p className="hover:text-white transition-colors duration-300">High-Performance Full-Stack</p>
             </div>
           </div>
 
           {/* Center Column: Experience Showcase */}
           <div className="space-y-4">
             <h4 className="text-[10px] font-mono uppercase tracking-widest text-zinc-500 font-bold">
-              Engineering Focus
+              Product-Ready SDE
             </h4>
             <p className="text-sm font-light text-zinc-400 leading-relaxed">
-              Engineering secure systems with high performance and interactive user interfaces.
+              Available for software engineering internships and full-time SDE roles across product-based companies and high-growth engineering teams.
             </p>
-            <a 
-              href="#projects" 
-              className="inline-flex items-center space-x-1 text-xs font-mono uppercase tracking-widest text-[#FF2A2A] hover:text-white border-b border-[#FF2A2A]/40 hover:border-white transition-all duration-300 pb-0.5"
-            >
-              <span>View Projects</span>
-              <ArrowUpRight size={12} />
-            </a>
+            <div className="flex items-center space-x-4 pt-1">
+              <button
+                onClick={onOpenResume}
+                className="inline-flex items-center space-x-1 text-xs font-mono uppercase tracking-widest text-[#FF2A2A] hover:text-white border-b border-[#FF2A2A]/40 hover:border-white transition-all duration-300 pb-0.5 cursor-pointer"
+              >
+                <FileText size={12} />
+                <span>Open ATS Resume</span>
+              </button>
+              <a 
+                href="#projects" 
+                className="inline-flex items-center space-x-1 text-xs font-mono uppercase tracking-widest text-zinc-400 hover:text-white border-b border-zinc-700 hover:border-white transition-all duration-300 pb-0.5"
+              >
+                <span>View Systems</span>
+                <ArrowUpRight size={12} />
+              </a>
+            </div>
           </div>
 
           {/* Right Column: Availability & Contact Details */}
           <div className="space-y-4">
             <h4 className="text-[10px] font-mono uppercase tracking-widest text-zinc-500 font-bold">
-              Current Location
+              Direct Contact
             </h4>
             <div className="text-sm font-light text-zinc-400 space-y-2">
               <p className="flex items-center space-x-2">
@@ -108,67 +116,92 @@ export default function Footer() {
                 <Phone size={14} className="text-[#FF2A2A]" />
                 <a href="tel:+919581778571" className="hover:text-white transition-colors">+91 9581778571</a>
               </p>
+              <p className="flex items-center space-x-2">
+                <Mail size={14} className="text-[#FF2A2A]" />
+                <a href="mailto:srinivaspalnati22@gmail.com" className="hover:text-white transition-colors">srinivaspalnati22@gmail.com</a>
+              </p>
             </div>
           </div>
 
         </div>
 
         {/* Section 2: Giant Branding Centerpiece */}
-        <div className="py-20 select-none text-center relative overflow-hidden">
+        <div className="py-16 select-none text-center relative overflow-hidden">
           <motion.h3 
             style={{ scale: textScale, opacity: textOpacity }}
-            className="text-[16vw] md:text-[14vw] font-black font-display tracking-tighter text-[#1e1e1e] leading-none lowercase text-center cursor-pointer transition-colors duration-500 hover:text-white hover:drop-shadow-[0_0_50px_rgba(255,42,42,0.4)]"
-            title="Srinivas Portfolio"
+            className="text-[14vw] font-black font-display tracking-tighter text-[#1e1e1e] leading-none lowercase text-center cursor-pointer transition-colors duration-500 hover:text-white hover:drop-shadow-[0_0_50px_rgba(255,42,42,0.4)]"
+            title="Palnati Srinivas Portfolio"
           >
-            srinivas
+            srinivas.dev
           </motion.h3>
         </div>
 
         {/* Section 3: Bottom Contact Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center border-t border-white/5 pt-12 text-left">
           
-          {/* Bottom Left: Copyright / React details */}
+          {/* Bottom Left: Copyright details */}
           <div className="text-xs text-zinc-500 font-light space-y-1">
-            <p>© {new Date().getFullYear()} Palnati Srinivas.</p>
+            <p>© {new Date().getFullYear()} Palnati Pushpa Naga Venkata Srinivas.</p>
             <p>
-              Built using <span className="text-zinc-400 font-medium">React.js</span> & <span className="text-zinc-400 font-medium">Tailwind CSS</span>.
+              Aspiring SDE & AI/ML Engineer • All rights reserved.
             </p>
           </div>
 
-          {/* Bottom Center: Main Email CTA */}
-          <div className="flex md:justify-center">
+          {/* Bottom Center: Competitive Coding & Profiles */}
+          <div className="flex items-center justify-start md:justify-center space-x-4 text-xs font-mono">
             <a 
-              href="mailto:srinivaspalnati22@gmail.com" 
-              className="text-base md:text-lg font-mono tracking-wide text-zinc-300 hover:text-white border-b border-zinc-700 hover:border-white transition-all duration-300 pb-1 flex items-center space-x-2"
+              href="https://leetcode.com/u/srinivaspalnati22-png/" 
+              target="_blank" 
+              rel="noreferrer"
+              className="text-zinc-400 hover:text-amber-400 transition-colors"
             >
-              <Mail size={16} className="text-[#FF2A2A]" />
-              <span>srinivaspalnati22@gmail.com</span>
+              LeetCode
+            </a>
+            <span className="text-zinc-700">•</span>
+            <a 
+              href="https://www.hackerrank.com/profile/srinivaspalnati1" 
+              target="_blank" 
+              rel="noreferrer"
+              className="text-zinc-400 hover:text-emerald-400 transition-colors"
+            >
+              HackerRank
+            </a>
+            <span className="text-zinc-700">•</span>
+            <a 
+              href="https://github.com/srinivaspalnati22-png" 
+              target="_blank" 
+              rel="noreferrer"
+              className="text-zinc-400 hover:text-white transition-colors"
+            >
+              GitHub
             </a>
           </div>
 
           {/* Bottom Right: Social / Back to Top */}
-          <div className="flex justify-start md:justify-end items-center space-x-6">
+          <div className="flex justify-start md:justify-end items-center space-x-4">
             <a 
               href="https://github.com/srinivaspalnati22-png" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-zinc-500 hover:text-white transition-colors"
+              className="p-2 rounded-lg bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10 transition-colors"
+              title="GitHub"
             >
-              <GithubIcon size={20} />
+              <GithubIcon size={18} />
             </a>
             <a 
               href="https://www.linkedin.com/in/palnati-pushpa-naga-venkata-srinivas-661744413" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-zinc-500 hover:text-white transition-colors"
+              className="p-2 rounded-lg bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10 transition-colors"
+              title="LinkedIn"
             >
-              <LinkedinIcon size={20} />
+              <LinkedinIcon size={18} />
             </a>
             <button 
               onClick={scrollToTop}
               className="px-4 py-2 rounded-full border border-white/10 text-[10px] font-mono uppercase tracking-widest text-zinc-400 hover:text-white hover:bg-white/5 transition-all duration-300 cursor-pointer"
             >
-              Back to Top
+              Top ↑
             </button>
           </div>
 

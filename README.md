@@ -1,10 +1,11 @@
-# 🚀 Srinivas Palnati — Modern Portfolio
+# 🚀 Srinivas Palnati — Aspiring SDE & AI/ML Engineer Portfolio
 
-> A modern, responsive developer portfolio built with React + Vite, showcasing projects, skills, and experience.
+> A production-grade, highly-responsive developer portfolio and ATS-optimized resume platform built with **React 19**, **Vite**, **Tailwind CSS v4**, and **Framer Motion**.
 
-[![Live Demo](https://img.shields.io/badge/🌐%20Live%20Demo-Visit%20Site-brightgreen?style=for-the-badge)](https://mordernportfolio-one.vercel.app)
-[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/srinivaspalnati22-png/mordernportfolio)
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=for-the-badge&logo=vercel)](https://mordernportfolio-one.vercel.app)
+[![Live Portfolio](https://img.shields.io/badge/🌐%20Live%20Portfolio-mordernportfolio--one.vercel.app-brightgreen?style=for-the-badge)](https://mordernportfolio-one.vercel.app)
+[![GitHub Profile](https://img.shields.io/badge/GitHub-srinivaspalnati22--png-181717?style=for-the-badge&logo=github)](https://github.com/srinivaspalnati22-png)
+[![LeetCode](https://img.shields.io/badge/LeetCode-Profile-FFA116?style=for-the-badge&logo=leetcode)](https://leetcode.com/u/srinivaspalnati22-png/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/palnati-pushpa-naga-venkata-srinivas-661744413)
 
 ---
 
@@ -14,26 +15,37 @@
 
 ---
 
-## ✨ Features
+## 🎯 Target Role & Profile
 
-- ⚡ Built with **React 19** and **Vite** for blazing-fast performance
-- 🎨 Stunning glassmorphism UI with smooth animations
-- 📱 Fully **responsive** across all devices
-- 🧭 Smooth scroll navigation
-- 💼 Projects showcase with live demo & GitHub links
-- 🛠️ Skills & technologies section
-- 📬 Contact section
+* **Primary Goal**: Software Development Engineer (SDE) & AI/ML Engineer (Targeting Tier-1 Product-Based Companies: Google, Amazon, Microsoft, Uber, Swiggy, Zomato, Atlassian & High-Growth Startups)
+* **Core Philosophy**: *"Building systems that don't just compute — they respond, protect, and save time when it matters most."*
+* **Specialization**: High-throughput distributed backends, Data Structures & Algorithms in Java, Computer Vision (rPPG Deepfake Detection), Sensor-Fusion Emergency Autonomous Triage.
 
 ---
 
-## 🛠️ Tech Stack
+## ✨ Features & What's New
 
-| Technology | Usage |
+- 📄 **ATS-Optimized Resume Page & Modal**:
+  - Dual modes: **Standard Single-Column ATS Clean View** & **Interactive Visual Card View**.
+  - **1-Click Print / Save PDF**: Custom `@media print` CSS engine for generating 100% ATS-compliant PDFs.
+  - **1-Click Plain-Text Copy**: Instantly copy formatted text for pasting into application portals.
+  - **Google XYZ Metric Formula**: Projects structured with clear impact metrics.
+- ⚡ **Dynamic Hero & Typing Animation**: Real-time cycling between SDE, AI Engineer, RESQONE AI architect, and LeetCode problem solver roles.
+- 🚑 **Mission-Critical SDE Architecture Viewer**: Interactive system design viewer for **RESQONE AI** (Sensor Radar -> WebSocket Event Mesh -> 3D Green Corridor Navigation) and **Pulsevein** (rPPG signal analysis).
+- 🏆 **Comprehensive Project Showcase**: Featuring all 7 shipped AI and system platforms with live Vercel deployments and GitHub repos.
+- ⚔️ **Competitive Programming & Credentials**: LeetCode, HackerRank, 5+ hackathon awards (1st Prize winner), and 6 Infosys/NIPAM certifications.
+
+---
+
+## 🛠️ Technical Stack
+
+| Category | Technologies |
 |---|---|
-| React 19 | Frontend framework |
-| Vite | Build tool & dev server |
-| CSS3 | Styling & animations |
-| Vercel | Hosting & deployment |
+| **Frontend & UI** | React 19, Framer Motion, Tailwind CSS v4, Lucide React, Three.js |
+| **Languages & DSA** | Java (Core, Collections, OOP), Python (AsyncIO, AI/ML), C/C++, TypeScript, SQL |
+| **Backend & Cloud** | FastAPI, Node.js, Express, Flask, Supabase, Firebase Firestore, PostgreSQL |
+| **AI / ML & CV** | PyTorch, TensorFlow, OpenCV, NLTK, Google Gemini AI SDK, rPPG Signal Processing |
+| **DevOps & Build** | Docker, Git, GitHub Actions, Vite, Vercel |
 
 ---
 
@@ -43,17 +55,17 @@
 # Clone the repository
 git clone https://github.com/srinivaspalnati22-png/mordernportfolio.git
 
-# Navigate into the project
+# Navigate into project directory
 cd mordernportfolio
 
 # Install dependencies
 npm install
 
-# Start the development server
+# Start local Vite development server
 npm run dev
 ```
 
-Then open [http://localhost:5173](http://localhost:5173) in your browser.
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ---
 
@@ -65,10 +77,4 @@ npm run build
 
 ---
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-<p align="center">Made with ❤️ by <a href="https://github.com/srinivaspalnati22-png">Srinivas Palnati</a></p>
+<p align="center">Crafted with precision by <a href="https://github.com/srinivaspalnati22-png">Palnati Srinivas</a></p>

@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, ShieldAlert, HeartHandshake, Briefcase, BarChart3, Search } from 'lucide-react';
+import { 
+  ExternalLink, ShieldAlert, HeartHandshake, Briefcase, 
+  BarChart3, Search, Activity, Sparkles, Star 
+} from 'lucide-react';
 
-const GithubIcon = ({ size = 20, ...props }) => (
+const GithubIcon = ({ size = 18, ...props }) => (
   <svg 
     width={size} 
     height={size} 
@@ -20,99 +23,206 @@ const GithubIcon = ({ size = 20, ...props }) => (
 );
 
 export default function Projects() {
+  const [filter, setFilter] = useState('all');
+
   const projects = [
     {
+      title: "RESQONE AI",
+      tagline: "Flagship Autonomous Emergency Triage & Rescue Platform",
+      description: "Autonomous rescue intelligence system featuring AI pre-crash sensor-fusion radar, 25-second automated SOS broadcast, and Three.js 3D live ambulance GPS route tracing along emergency green corridors with ICU reservation.",
+      icon: <Activity className="w-6 h-6 text-[#FF2A2A]" />,
+      tags: ["React", "Three.js", "FastAPI", "Supabase", "WebSockets", "Python"],
+      github: "https://github.com/srinivaspalnati22-png/RESQONE-AI",
+      live: "https://resqone-ai-app.vercel.app",
+      category: "flagship",
+      featured: true,
+      badge: "Production Live"
+    },
+    {
+      title: "Pulsevein",
+      tagline: "Multimodal Deepfake Detection using rPPG",
+      description: "Forensic synthetic face detection analyzing sub-visual facial blood flow changes via remote photoplethysmography (rPPG) paired with lip-audio synchronization cross-correlation networks.",
+      icon: <Search className="w-6 h-6 text-purple-400" />,
+      tags: ["Python", "OpenCV", "TensorFlow", "Signal Processing", "Librosa"],
+      github: "https://github.com/srinivaspalnati22-png/PLUSEVEIN",
+      live: null,
+      category: "ai",
+      featured: true,
+      badge: "InnoGenesis Finalist"
+    },
+    {
       title: "TrustShield AI",
-      description: "An AI-powered digital trust and scam-protection platform. It scans messages in real time, detects phishing URLs, verifies job offer letters, and fact-checks suspicious content. Features a community threat-intelligence feed and interactive analytics dashboard.",
+      tagline: "Real-Time Digital Threat & Scam Protection",
+      description: "AI-powered scam detection platform scanning messages, verifying job offer letters, checking phishing URLs, and delivering threat-intelligence advisories.",
       icon: <ShieldAlert className="w-6 h-6 text-[#FF2A2A]" />,
-      tags: ["Python", "Flutter", "Firebase", "Google AI SDK", "Phishing Detection"],
-      github: "https://github.com/srinivaspalnati22-png/trustshield-ai"
+      tags: ["Python", "Flutter", "Firebase", "Google AI SDK", "NLP Heuristics"],
+      github: "https://github.com/srinivaspalnati22-png/TRUTHSHEILD-AI",
+      live: null,
+      category: "ai",
+      featured: false,
+      badge: "Shipped"
     },
     {
       title: "SmartCivic AI",
-      description: "A multilingual AI civic issue reporting platform supporting voice input in English, Hindi, Telugu, and Tamil. Categorizes complaints automatically and uses location-aware reporting to route civic issues directly to municipal departments.",
-      icon: <HeartHandshake className="w-6 h-6 text-[#FF2A2A]" />,
+      tagline: "Multilingual Voice-Driven Civic Issue Router",
+      description: "Civic complaint engine supporting voice input in English, Hindi, Telugu, and Tamil with automated geocoding categorization and routing to municipal departments.",
+      icon: <HeartHandshake className="w-6 h-6 text-emerald-400" />,
       tags: ["Flask", "React", "AI Translation", "Geocoding API"],
-      github: "https://github.com/srinivaspalnati22-png/smartcivic-ai"
+      github: "https://github.com/srinivaspalnati22-png/SMARTCIVIC-AI",
+      live: "https://smartcivicai.vercel.app",
+      category: "system",
+      featured: false,
+      badge: "Live App"
     },
     {
       title: "CareerSafe",
-      description: "An AI-driven platform protecting job seekers by analyzing and detecting job scams, verifying employer authenticity, cross-checking resume details, and delivering automated, personalized career safety guidance.",
-      icon: <Briefcase className="w-6 h-6 text-[#FF2A2A]" />,
-      tags: ["Node.js", "React", "NLP Model", "Job Market Analytics"],
-      github: "https://github.com/srinivaspalnati22-png/careersafe"
-    },
-    {
-      title: "NexusAI",
-      description: "A retail demand-forecasting platform incorporating predictive analytics to forecast product demand, analyze seasonal patterns, and generate interactive inventory optimization dashboards.",
-      icon: <BarChart3 className="w-6 h-6 text-[#FF2A2A]" />,
-      tags: ["Python", "Scikit-Learn", "FastAPI", "React Charts"],
-      github: "https://github.com/srinivaspalnati22-png/nexus-ai"
+      tagline: "AI Job Scam Detector & Resume Authenticity Verifier",
+      description: "Protects job seekers by analyzing suspicious job postings, verifying recruiter authenticity, cross-checking resume claims, and providing career safety advice.",
+      icon: <Briefcase className="w-6 h-6 text-blue-400" />,
+      tags: ["Node.js", "React", "NLP Model", "Capacitor", "Job Analytics"],
+      github: "https://github.com/srinivaspalnati22-png/AI-POWERED-CAREER-SAFETY",
+      live: "https://ai-powered-career-safety.vercel.app",
+      category: "system",
+      featured: false,
+      badge: "Live App"
     },
     {
       title: "TruthLens AI",
-      description: "A misinformation and fake-news detection platform combining clickbait classification, sentiment analysis, publisher bias tracking, and source credibility scoring to combat digital deception.",
-      icon: <Search className="w-6 h-6 text-[#FF2A2A]" />,
-      tags: ["Python", "NLTK", "Transformers", "React Dashboard"],
-      github: "https://github.com/srinivaspalnati22-png/truthlens-ai"
+      tagline: "Misinformation & Fake-News Verification Engine",
+      description: "Comprehensive misinformation detection combining clickbait classification, sentiment analysis, publisher bias tracking, and source credibility scoring.",
+      icon: <Search className="w-6 h-6 text-amber-400" />,
+      tags: ["Python", "Transformers", "NLTK", "Flask", "Tailwind CSS"],
+      github: "https://github.com/srinivaspalnati22-png/Truthlensai",
+      live: "https://truthlensai-ecru.vercel.app",
+      category: "ai",
+      featured: false,
+      badge: "Live App"
+    },
+    {
+      title: "NexusAI",
+      tagline: "Retail Predictive Demand Forecasting Platform",
+      description: "Retail demand-forecasting platform incorporating predictive analytics to forecast product inventory requirements and seasonal trend patterns.",
+      icon: <BarChart3 className="w-6 h-6 text-indigo-400" />,
+      tags: ["Python", "Scikit-Learn", "FastAPI", "React Charts"],
+      github: "https://github.com/srinivaspalnati22-png/Retaildemandai",
+      live: "https://smartretailai.vercel.app",
+      category: "system",
+      featured: false,
+      badge: "Live App"
     }
   ];
 
+  const filteredProjects = projects.filter((p) => {
+    if (filter === 'all') return true;
+    if (filter === 'flagship') return p.category === 'flagship' || p.live;
+    if (filter === 'ai') return p.category === 'ai';
+    if (filter === 'system') return p.category === 'system';
+    return true;
+  });
+
   return (
     <section id="projects" className="relative w-full py-24 bg-[#0a0a0a] text-white">
-      
-      {/* Visual background lights */}
-      <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-[#FF2A2A]/5 rounded-full blur-[100px] pointer-events-none" />
+      {/* Background lights */}
+      <div className="absolute bottom-1/4 right-0 w-[450px] h-[450px] bg-[#FF2A2A]/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div className="text-left">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#FF2A2A] font-black">
-              Showcase
+            <span className="text-xs font-mono uppercase tracking-widest text-[#FF2A2A] font-black flex items-center space-x-1.5">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Production Systems & Open Source</span>
             </span>
             <h2 className="text-4xl md:text-6xl font-black font-display tracking-tight text-white uppercase mt-2">
-              Featured Work
+              Featured Systems
             </h2>
           </div>
           <p className="text-zinc-400 font-light max-w-md text-left mt-4 md:mt-0 leading-relaxed text-sm md:text-base">
-            A handpicked selection of platforms built using machine learning models, modern web technologies, and security-centric design.
+            Real-world platforms built using machine learning models, real-time distributed architecture, and security-first engineering.
           </p>
+        </div>
+
+        {/* Filter Tabs */}
+        <div className="flex flex-wrap gap-2 mb-10">
+          {[
+            { label: 'All Projects (7)', id: 'all' },
+            { label: 'Live Deployed Apps (5)', id: 'flagship' },
+            { label: 'AI & Computer Vision (3)', id: 'ai' },
+            { label: 'Systems & Web (4)', id: 'system' }
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setFilter(tab.id)}
+              className={`px-4 py-2 rounded-full text-xs font-mono font-medium transition-all cursor-pointer border ${
+                filter === tab.id
+                  ? 'bg-white text-black border-white font-bold shadow-md'
+                  : 'bg-white/5 text-zinc-400 border-white/10 hover:text-white hover:border-white/20'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, idx) => (
+          {filteredProjects.map((project, idx) => (
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              transition={{ duration: 0.5, delay: idx * 0.08 }}
               key={project.title}
-              className="bg-zinc-950/40 border border-white/5 p-8 rounded-3xl hover:border-[#FF2A2A]/30 transition-all duration-500 group flex flex-col justify-between hover:shadow-[0_20px_45px_rgba(255,42,42,0.04)]"
+              className={`bg-zinc-950/60 border p-8 rounded-3xl transition-all duration-500 group flex flex-col justify-between hover:shadow-[0_20px_45px_rgba(255,42,42,0.06)] relative overflow-hidden ${
+                project.featured 
+                  ? 'border-[#FF2A2A]/40 hover:border-[#FF2A2A]' 
+                  : 'border-white/5 hover:border-white/20'
+              }`}
             >
+              {project.featured && (
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF2A2A]/10 rounded-full blur-2xl pointer-events-none" />
+              )}
+
               <div>
                 {/* Top Card Icon & Links */}
-                <div className="flex justify-between items-start mb-8">
-                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[#FF2A2A]/10 group-hover:border-[#FF2A2A]/20 transition-all duration-300">
+                <div className="flex justify-between items-start mb-6">
+                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[#FF2A2A]/10 group-hover:border-[#FF2A2A]/30 transition-all duration-300">
                     {project.icon}
                   </div>
-                  <div className="flex space-x-3 text-zinc-500">
+                  
+                  <div className="flex items-center space-x-2">
+                    <span className={`px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase ${
+                      project.badge === 'Production Live' 
+                        ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
+                        : project.badge.includes('Finalist')
+                        ? 'bg-purple-500/10 text-purple-400 border border-purple-500/20'
+                        : 'bg-white/10 text-zinc-300 border border-white/10'
+                    }`}>
+                      {project.badge}
+                    </span>
+
                     <a 
                       href={project.github} 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="hover:text-white transition-colors duration-300"
+                      className="p-2 rounded-xl text-zinc-400 hover:text-white hover:bg-white/10 transition-all duration-300"
+                      title="View GitHub Repository"
                     >
-                      <GithubIcon size={20} />
+                      <GithubIcon size={18} />
                     </a>
-                    <a 
-                      href="#" 
-                      className="hover:text-white transition-colors duration-300 cursor-pointer"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
+
+                    {project.live && (
+                      <a 
+                        href={project.live} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="p-2 rounded-xl text-zinc-400 hover:text-[#FF2A2A] hover:bg-white/10 transition-all duration-300 cursor-pointer"
+                        title="View Live App"
+                      >
+                        <ExternalLink size={18} />
+                      </a>
+                    )}
                   </div>
                 </div>
 
@@ -120,21 +230,38 @@ export default function Projects() {
                 <h3 className="text-2xl font-bold font-display text-white group-hover:text-[#FF2A2A] transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="mt-4 text-zinc-400 font-light text-sm leading-relaxed">
+                <p className="text-xs font-mono text-zinc-400 font-semibold mt-1">
+                  {project.tagline}
+                </p>
+                <p className="mt-4 text-zinc-300 font-light text-sm leading-relaxed">
                   {project.description}
                 </p>
               </div>
 
-              {/* Tags */}
-              <div className="mt-8 pt-6 border-t border-white/5 flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span 
-                    key={tag} 
-                    className="px-3 py-1 rounded-full bg-white/5 border border-white/5 text-[10px] font-mono text-zinc-400 group-hover:text-white group-hover:border-white/10 transition-colors"
+              {/* Tags and Action link */}
+              <div className="mt-8 pt-6 border-t border-white/5 space-y-4">
+                <div className="flex flex-wrap gap-1.5">
+                  {project.tags.map((tag) => (
+                    <span 
+                      key={tag} 
+                      className="px-2.5 py-1 rounded-md bg-white/5 border border-white/5 text-[10px] font-mono text-zinc-400 group-hover:text-zinc-200 transition-colors"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {project.live && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center space-x-1 text-xs font-mono font-bold text-[#FF2A2A] hover:text-white uppercase tracking-wider transition-colors pt-2"
                   >
-                    {tag}
-                  </span>
-                ))}
+                    <span>Launch Live Platform</span>
+                    <ExternalLink size={12} />
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}

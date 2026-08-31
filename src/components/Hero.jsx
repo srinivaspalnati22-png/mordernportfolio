@@ -1,12 +1,62 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Volume2, VolumeX, Play, Pause } from 'lucide-react';
+import { Volume2, VolumeX, Play, Pause, FileText, Sparkles, ArrowRight, Code, Award } from 'lucide-react';
 import backgroundVideo from '../assets/Content_creator_speaking_on_video_202607011318.mp4';
 
-export default function Hero() {
+const GithubIcon = ({ size = 20, ...props }) => (
+  <svg 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    {...props}
+  >
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+    <path d="M9 18c-4.51 2-5-2-7-2" />
+  </svg>
+);
+
+const phrases = [
+  "Aspiring SDE & AI/ML Engineer",
+  "Architect of RESQONE AI (Live Emergency Rescue)",
+  "Deepfake Detection with rPPG Signals",
+  "Java & DSA Mastery on LeetCode",
+  "1st Prize Hackathon Winner @ NRI IT"
+];
+
+export default function Hero({ onOpenResume }) {
   const videoRef = useRef(null);
   const [isMuted, setIsMuted] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  
+  // Dynamic typing state
+  const [textIndex, setTextIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentPhrase = phrases[textIndex];
+    const typingSpeed = isDeleting ? 35 : 75;
+
+    const timer = setTimeout(() => {
+      if (!isDeleting && charIndex < currentPhrase.length) {
+        setCharIndex((prev) => prev + 1);
+      } else if (!isDeleting && charIndex === currentPhrase.length) {
+        setTimeout(() => setIsDeleting(true), 2000);
+      } else if (isDeleting && charIndex > 0) {
+        setCharIndex((prev) => prev - 1);
+      } else if (isDeleting && charIndex === 0) {
+        setIsDeleting(false);
+        setTextIndex((prev) => (prev + 1) % phrases.length);
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timer);
+  }, [charIndex, isDeleting, textIndex]);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -33,7 +83,6 @@ export default function Hero() {
 
   useEffect(() => {
     if (videoRef.current) {
-      // Try playing unmuted initially
       videoRef.current.play().catch(err => {
         console.log("Unmuted autoplay blocked by browser. Playing muted instead.", err);
         setIsMuted(true);
@@ -61,11 +110,6 @@ export default function Hero() {
     }
   };
 
-  const handleVideoEnded = () => {
-    setIsPaused(true);
-  };
-
-  // Smooth scroll helper
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -74,51 +118,79 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative w-full h-screen overflow-hidden bg-black flex items-center">
-      {/* Background Media Container (HTML5 background video) */}
+    <section id="home" className="relative w-full min-h-screen overflow-hidden bg-black flex items-center pt-24 pb-16">
+      {/* Background Media Container */}
       <div className="absolute inset-0 w-full h-full z-0 select-none">
         <video
           ref={videoRef}
           src={backgroundVideo}
           className="absolute inset-0 w-full h-full object-cover"
-          onEnded={handleVideoEnded}
+          onEnded={() => setIsPaused(true)}
           playsInline
         />
-        {/* Cinematic dark overlay covering the background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/35 md:via-black/50 md:to-black/30" />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/50" />
       </div>
 
-      {/* Main Layout Grid */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-center h-full pt-16">
+      {/* Main Layout */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        {/* Left Content (Overlayed text) */}
-        <div className="md:col-span-8 flex flex-col justify-center text-left pt-8 md:pt-0">
+        {/* Left Content */}
+        <div className="lg:col-span-8 flex flex-col justify-center text-left">
+          
+          {/* Top Badge: Goal & Availability */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 2.1 }}
+            className="flex flex-wrap items-center gap-2 mb-4"
+          >
+            <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full border border-[#FF2A2A]/40 bg-[#FF2A2A]/10 text-xs uppercase tracking-widest text-[#FF2A2A] font-mono font-bold">
+              <span className="w-2 h-2 rounded-full bg-[#FF2A2A] animate-ping" />
+              <span>Target Role: Product SDE & AI Systems</span>
+            </div>
+            <div className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full border border-white/10 glass-panel-dark text-xs font-mono text-zinc-400">
+              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+              <span>B.Tech CSE '28 • Andhra Pradesh, India</span>
+            </div>
+          </motion.div>
+
+          {/* Dynamic Headline */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 2.3 }}
-            className="space-y-4"
+            className="space-y-2"
           >
-            <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full border border-white/10 glass-panel-dark text-xs uppercase tracking-widest text-[#FF2A2A] font-mono">
-              <span className="w-2 h-2 rounded-full bg-[#FF2A2A] animate-ping" />
-              <span>Available for Freelance & Full-time</span>
+            <div className="text-xl sm:text-2xl font-mono text-zinc-300 font-medium">
+              Hello, I'm <span className="text-white font-bold">Palnati Srinivas</span> 👋
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-black font-display tracking-tight text-white leading-[1.05] uppercase">
-              Hi, I'm a <br />
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-black font-display tracking-tight text-white leading-[1.05] uppercase min-h-[120px] sm:min-h-[140px] flex flex-col justify-center">
               <span className="text-stroke-white text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.05)]">
-                Full Stack Developer
+                {phrases[textIndex].substring(0, charIndex)}
               </span>
+              <span className="inline-block w-2.5 h-10 md:h-14 bg-[#FF2A2A] ml-1 animate-pulse" />
             </h1>
           </motion.div>
 
+          {/* Bio Quote from GitHub Profile */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 2.5 }}
-            className="mt-6 text-base md:text-lg text-white/70 max-w-xl font-sans font-light leading-relaxed drop-shadow-md"
+            className="mt-4 text-base md:text-lg text-white/80 max-w-2xl font-sans font-light leading-relaxed drop-shadow-md border-l-2 border-[#FF2A2A] pl-4 italic"
           >
-            Palnati Pushpa Naga Venkata Srinivas. B.Tech CSE student specializing in AI/ML engineering, full-stack prototyping, and startup building using React, Node.js, Tailwind CSS, and Google AI.
+            "Building systems that don't just compute — they respond, protect, and save time when it matters most."
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 2.6 }}
+            className="mt-3 text-sm md:text-base text-zinc-300 max-w-xl font-light leading-relaxed"
+          >
+            Computer Science Engineering student specializing in high-throughput backend systems, Java & DSA algorithm design, and production AI platforms like <strong className="text-white font-semibold">RESQONE AI</strong> and <strong className="text-white font-semibold">Pulsevein</strong>.
           </motion.p>
 
           {/* Action CTAs */}
@@ -126,40 +198,119 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 2.7 }}
-            className="mt-8 flex flex-wrap gap-4"
+            className="mt-8 flex flex-wrap items-center gap-4"
           >
+            {/* ATS Resume CTA */}
+            <button
+              onClick={onOpenResume}
+              className="px-8 py-4 rounded-full bg-[#FF2A2A] text-white font-bold uppercase tracking-wider text-xs hover:bg-[#ff4444] hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_10px_30px_rgba(255,42,42,0.4)] cursor-pointer flex items-center space-x-2"
+            >
+              <FileText className="w-4 h-4" />
+              <span>ATS Resume (Product SDE)</span>
+            </button>
+
+            {/* Explore Projects */}
             <button
               onClick={() => scrollToSection('projects')}
-              className="px-8 py-4 rounded-full bg-white text-black font-bold uppercase tracking-wider text-xs hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_10px_20px_rgba(255,255,255,0.1)] cursor-pointer"
+              className="px-7 py-4 rounded-full border border-white/20 glass-panel text-white font-bold uppercase tracking-wider text-xs hover:bg-white/10 active:scale-95 transition-all duration-300 cursor-pointer flex items-center space-x-2"
             >
-              View My Work
+              <span>Explore 7+ AI Systems</span>
+              <ArrowRight className="w-4 h-4" />
             </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="px-8 py-4 rounded-full border border-white/20 glass-panel text-white font-bold uppercase tracking-wider text-xs hover:bg-white/10 active:scale-95 transition-all duration-300 cursor-pointer"
+
+            {/* GitHub Profile Link */}
+            <a
+              href="https://github.com/srinivaspalnati22-png"
+              target="_blank"
+              rel="noreferrer"
+              className="p-3.5 rounded-full border border-white/20 glass-panel text-zinc-300 hover:text-white hover:border-white transition-all duration-300 cursor-pointer"
+              title="Visit GitHub @srinivaspalnati22-png"
             >
-              Contact Me
+              <GithubIcon size={20} />
+            </a>
+          </motion.div>
+
+          {/* Live Quick Metrics */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 2.9 }}
+            className="mt-10 pt-6 border-t border-white/10 flex flex-wrap items-center gap-6 text-xs font-mono text-zinc-400"
+          >
+            <div className="flex items-center space-x-2">
+              <Award className="w-4 h-4 text-amber-400" />
+              <span>1st Prize Winner @ 5-Hr Hackathon</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Code className="w-4 h-4 text-[#FF2A2A]" />
+              <span>Java + DSA on LeetCode</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-400" />
+              <span>7+ Shipped AI Platforms</span>
+            </div>
+          </motion.div>
+
+        </div>
+
+        {/* Right Side: Quick Stats Spotlight Card */}
+        <div className="lg:col-span-4 hidden lg:block">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 2.5 }}
+            className="p-6 rounded-3xl bg-zinc-950/70 border border-white/10 shadow-2xl backdrop-blur-xl space-y-5"
+          >
+            <div className="flex items-center justify-between pb-3 border-b border-white/10">
+              <div className="flex items-center space-x-2">
+                <span className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-xs font-mono text-zinc-300 font-bold uppercase">System Profile</span>
+              </div>
+              <span className="text-[10px] font-mono text-zinc-500">v2.4 // 2026</span>
+            </div>
+
+            <div className="space-y-3 text-xs font-mono">
+              <div className="p-3 rounded-xl bg-white/5 border border-white/5 flex justify-between items-center">
+                <span className="text-zinc-400">Primary Goal</span>
+                <span className="text-[#FF2A2A] font-bold">Product SDE / AI</span>
+              </div>
+              <div className="p-3 rounded-xl bg-white/5 border border-white/5 flex justify-between items-center">
+                <span className="text-zinc-400">Flagship</span>
+                <a href="https://resqone-ai-app.vercel.app" target="_blank" rel="noreferrer" className="text-white font-bold underline hover:text-[#FF2A2A]">
+                  RESQONE AI ↗
+                </a>
+              </div>
+              <div className="p-3 rounded-xl bg-white/5 border border-white/5 flex justify-between items-center">
+                <span className="text-zinc-400">Core Stack</span>
+                <span className="text-white font-bold">Java, Python, React</span>
+              </div>
+              <div className="p-3 rounded-xl bg-white/5 border border-white/5 flex justify-between items-center">
+                <span className="text-zinc-400">Hackathon Wins</span>
+                <span className="text-amber-400 font-bold">1st Prize Winner</span>
+              </div>
+            </div>
+
+            <button
+              onClick={onOpenResume}
+              className="w-full py-3 rounded-xl bg-white text-black font-mono font-bold uppercase tracking-wider text-xs hover:bg-zinc-200 transition-all cursor-pointer shadow"
+            >
+              Open ATS Resume
             </button>
           </motion.div>
         </div>
+
       </div>
 
       {/* Floating Video Controls */}
       <div className="absolute bottom-8 right-8 z-20 flex items-center space-x-3">
-        {/* Play/Pause Toggle */}
         <button
           onClick={togglePlay}
           className="w-12 h-12 rounded-full border border-white/10 bg-black/60 backdrop-blur-md text-white hover:border-white transition-all duration-300 flex items-center justify-center cursor-pointer shadow-lg hover:scale-105 active:scale-95"
           aria-label={isPaused ? "Play video" : "Pause video"}
         >
-          {isPaused ? (
-            <Play className="w-5 h-5 text-white fill-white" />
-          ) : (
-            <Pause className="w-5 h-5 text-[#FF2A2A]" />
-          )}
+          {isPaused ? <Play className="w-5 h-5 text-white fill-white" /> : <Pause className="w-5 h-5 text-[#FF2A2A]" />}
         </button>
 
-        {/* Sound Toggle */}
         <button
           onClick={toggleMute}
           className="w-12 h-12 rounded-full border border-white/10 bg-black/60 backdrop-blur-md text-white hover:border-white transition-all duration-300 flex items-center justify-center cursor-pointer shadow-lg hover:scale-105 active:scale-95"
@@ -174,26 +325,6 @@ export default function Hero() {
             <Volume2 className="w-5 h-5 text-[#FF2A2A]" />
           )}
         </button>
-      </div>
-
-      {/* Bottom Scroll Indicator (Desktop Only) */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center z-20 pointer-events-none">
-        <span className="text-[10px] font-mono tracking-widest text-white/40 uppercase mb-2">
-          Scroll Down
-        </span>
-        <div className="w-6 h-10 rounded-full border border-white/20 flex justify-center p-1.5 shadow-[0_0_10px_rgba(255,255,255,0.05)]">
-          <motion.div
-            animate={{ 
-              y: [0, 12, 0],
-            }}
-            transition={{ 
-              duration: 1.8, 
-              repeat: Infinity, 
-              ease: "easeInOut" 
-            }}
-            className="w-1 h-2 rounded-full bg-[#FF2A2A]"
-          />
-        </div>
       </div>
     </section>
   );

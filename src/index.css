@@ -95,3 +95,43 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ATS Print Stylesheet */
+@media print {
+  @page {
+    margin: 12mm;
+    size: letter portrait;
+  }
+  
+  html, body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+    overflow: visible !important;
+  }
+
+  nav, main, footer, #home, #about, #skills, #services, #projects, #contact {
+    display: none !important;
+  }
+
+  #ats-resume-document {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  #ats-resume-document a {
+    color: #000000 !important;
+    text-decoration: none !important;
+  }
+
+  #ats-resume-document * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
