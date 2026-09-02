@@ -81,7 +81,7 @@ export default function Navbar({ onOpenResume }) {
               S
             </div>
             <span className="text-xl md:text-2xl font-black font-display text-white tracking-tight">
-              Srinivas<span className="text-[#FF2A2A] transition-all duration-300 group-hover:scale-125 inline-block">.dev</span>
+              Palnati Srinivas<span className="text-[#FF2A2A] transition-all duration-300 group-hover:scale-125 inline-block">.</span>
             </span>
           </button>
 

@@ -349,13 +349,13 @@ VERIFIED CERTIFICATIONS (LINKEDIN VERIFIED)
                   Honors, Hackathons & Competitions
                 </h2>
                 <ul className="list-disc list-outside ml-4 space-y-1 text-xs text-zinc-800 leading-snug">
-                  <li><strong>First Prize Winner</strong> — 5-Hour Rapid Prototype Hackathon at NRI Institute of Technology. Built full-stack emergency triage prototype in constrained time.</li>
-                  <li><strong>Spotlight Finalist</strong> — InnoGenesis National Hackathon 2026 for Pulsevein rPPG Multimodal Deepfake Detector.</li>
-                  <li><strong>Techzite 2025</strong> — 24-Hour National Hackathon at RGUKT IIIT Nuzvid.</li>
-                  <li><strong>24-Hour State-Level Innovation Hackathon</strong> — P.B. Siddhartha College.</li>
-                  <li><strong>CREATHON</strong> — Hackathon Event at NRI Institute of Technology.</li>
-                  <li><strong>Competitive Programming</strong> — Actively solving Data Structures & Algorithms problems daily on LeetCode and HackerRank in Java.</li>
-                  <li><strong>7+ Deployed AI Products</strong> — Built, containerized, and hosted end-to-end production web applications.</li>
+                  <li><strong>🥇 1st Place Winner</strong> — CREATHON Hackathon Event at NRI Institute of Technology (Spark Builders Team, March 2026).</li>
+                  <li><strong>🏆 Certificate of Excellence</strong> — Teckzite'25 National AI & ML Quantum Technologies Hackathon at RGUKT IIIT Nuzvid (Dec 2025).</li>
+                  <li><strong>⭐ Spotlight Finalist</strong> — InnoGenesis 5.0 24-Hour National Innovation Hackathon for Pulsevein rPPG Multimodal Deepfake Detector (Aug 2026).</li>
+                  <li><strong>🌟 National Level Competitor</strong> — TECHFUSION 2025 at R.V.R. & J.C. College of Engineering (A) (Dec 2025).</li>
+                  <li><strong>🏅 Consolation Prize</strong> — Code Quest Algorithmic Programming Contest at SPICES CSE Club (Oct 2025).</li>
+                  <li><strong>🎯 Competitions & Summits</strong> — AIGNITE 2.0 (P.B. Siddhartha College), LAKSHYA 2026 (LBRCE), and GDG On Campus WOW 2026 (GITAM University).</li>
+                  <li><strong>🚀 7+ Deployed AI Platforms</strong> — Architected, containerized, and deployed full-stack scalable web systems.</li>
                 </ul>
               </section>
 
@@ -376,13 +376,15 @@ VERIFIED CERTIFICATIONS (LINKEDIN VERIFIED)
                       Verified Certifications
                     </h2>
                     <ul className="list-disc list-outside ml-4 space-y-0.5 text-[11px] text-zinc-800">
-                      <li>Infosys Springboard: Explore Machine Learning with Python (Jun 2025)</li>
-                      <li>Infosys Springboard: Introduction to Deep Learning & Neural Nets (Aug 2025)</li>
-                      <li>Infosys Springboard: Software Engineering Principles (Aug 2025)</li>
-                      <li>Infosys Springboard: Introduction to NLP (Aug 2025)</li>
-                      <li>Infosys Springboard: Prompt Engineering & Generative AI (Jun 2025)</li>
-                      <li>NIPAM IP Office of India: National Intellectual Property Training (Sep 2025)</li>
-                      <li>LetsUpgrade: Full Stack & Python Acceleration Programs</li>
+                      <li><strong>NIPAM</strong> — Govt of India Intellectual Property Office (Sep 2025)</li>
+                      <li><strong>HackerRank</strong> — Python (Basic) Skill Certified (ID: A63A050D8705)</li>
+                      <li><strong>HP LIFE Foundation</strong> — AI for Beginners (July 2026)</li>
+                      <li><strong>LetsUpgrade</strong> — Build with AI: Gemini YouTube Summarizer (NSDC & GDG)</li>
+                      <li><strong>Infosys Springboard</strong> — Prompt Engineering (Jun 2025)</li>
+                      <li><strong>Infosys Springboard</strong> — Intro to Natural Language Processing (Aug 2025)</li>
+                      <li><strong>Infosys Springboard</strong> — Introduction to Deep Learning (Aug 2025)</li>
+                      <li><strong>Infosys Springboard</strong> — Explore Machine Learning using Python (Jun 2025)</li>
+                      <li><strong>Infosys Springboard</strong> — Software Engineering Principles (Aug 2025)</li>
                     </ul>
                   </div>
                 </div>
