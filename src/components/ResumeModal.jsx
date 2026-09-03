@@ -80,9 +80,9 @@ ACHIEVEMENTS, HACKATHONS & COMPETITIONS
 ================================================================================
 EDUCATION
 ================================================================================
-Bachelor of Technology in Computer Science & Engineering (B.Tech CSE)
-Expected Graduation: 2028 | Andhra Pradesh, India
-Relevant Coursework: Data Structures, Analysis of Algorithms, Object-Oriented Programming, Operating Systems, Database Management Systems, Computer Networks, Software Engineering.
+Bachelor of Technology in Computer Science & Engineering (B.Tech CSE) — 3rd Year
+Current Status: 3rd Year Undergraduate | Learning Java + DSA & Distributed Systems | Andhra Pradesh, India
+Relevant Coursework: Data Structures & Algorithms (Java), Analysis of Algorithms, Object-Oriented Programming, Operating Systems, Database Management Systems, Computer Networks, Software Engineering.
 
 ================================================================================
 VERIFIED CERTIFICATIONS (LINKEDIN VERIFIED)
@@ -366,9 +366,9 @@ VERIFIED CERTIFICATIONS (LINKEDIN VERIFIED)
                     <h2 className="text-xs font-bold uppercase tracking-wider text-zinc-950 border-b border-zinc-400 pb-1 mb-2">
                       Education
                     </h2>
-                    <p className="text-xs font-bold text-zinc-950">Bachelor of Technology (B.Tech) in Computer Science & Engineering</p>
-                    <p className="text-xs text-zinc-700">Expected Graduation: 2028 | Andhra Pradesh, India</p>
-                    <p className="text-[11px] text-zinc-600 mt-1">Coursework: Data Structures & Algorithms, OOP, Operating Systems, DBMS, Computer Networks, System Design</p>
+                    <p className="text-xs font-bold text-zinc-950">Bachelor of Technology (B.Tech) in Computer Science & Engineering — 3rd Year</p>
+                    <p className="text-xs text-zinc-700">Current Status: 3rd Year Undergraduate | Learning Java + DSA | Andhra Pradesh, India</p>
+                    <p className="text-[11px] text-zinc-600 mt-1">Coursework: Data Structures & Algorithms (Java), OOP, Operating Systems, DBMS, Computer Networks, System Design</p>
                   </div>
 
                   <div>

@@ -52,7 +52,7 @@ export default function About({ onOpenResume }) {
                 <span>SDE CANDIDATE PASS</span>
               </div>
               <div className="text-[9px] font-mono text-zinc-500 tracking-wider">
-                DEVPASS // PRODUCT SDE '28
+                DEVPASS // 3RD YEAR B.TECH CSE
               </div>
             </div>
 
@@ -120,7 +120,7 @@ export default function About({ onOpenResume }) {
               PALNATI PUSHPA NAGA VENKATA SRINIVAS
             </h3>
             <div className="text-sm font-mono text-black font-bold uppercase tracking-wider mt-1">
-              Aspiring Software Development Engineer (SDE) & AI/ML Engineer
+              3rd Year B.Tech CSE // Learning Java + DSA // Aspiring SDE & AI Engineer
             </div>
           </motion.div>
 
@@ -132,7 +132,7 @@ export default function About({ onOpenResume }) {
             className="space-y-4 text-white/95 font-light text-base md:text-lg leading-relaxed max-w-2xl"
           >
             <p>
-              I am a Computer Science Engineering student dedicated to building robust, high-throughput systems and intelligent applications. My primary focus lies in <strong className="text-black font-bold">Data Structures & Algorithms (Java)</strong>, <strong className="text-black font-bold">System Design fundamentals</strong>, and <strong className="text-black font-bold">Production-Grade AI Pipelines</strong>.
+              I am a <strong className="text-black font-bold">3rd-Year B.Tech Computer Science Engineering student</strong> actively learning and mastering <strong className="text-black font-bold">Java + Data Structures & Algorithms (DSA)</strong> on LeetCode, <strong className="text-black font-bold">System Design fundamentals</strong>, and <strong className="text-black font-bold">Production-Grade AI Pipelines</strong>.
             </p>
             <p className="text-zinc-100">
               I believe in shipping real software. Over the past year, I have engineered and deployed <strong>7+ AI platforms</strong> spanning autonomous emergency triage (<strong className="text-black font-bold">RESQONE AI</strong>), multimodal rPPG deepfake forensics (<strong className="text-black font-bold">Pulsevein</strong>), and cybersecurity scam defense.
