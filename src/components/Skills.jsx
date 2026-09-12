@@ -299,25 +299,26 @@ export default function Skills({ onOpenResume }) {
   ];
 
   return (
-    <section id="skills" className="relative w-full py-24 bg-[#0a0a0a] text-white overflow-hidden">
+    <section id="skills" className="relative w-full py-28 bg-[#08080b] text-white overflow-hidden border-b border-white/5">
       
       {/* Background radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#FF2A2A]/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#FF2A2A]/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute inset-0 bg-grid-dark opacity-30 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#FF2A2A] font-black flex items-center justify-center space-x-1.5">
+          <span className="text-xs font-mono uppercase tracking-widest text-[#FF2A2A] font-bold flex items-center justify-center space-x-1.5">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Product SDE Competencies</span>
           </span>
-          <h2 className="text-4xl md:text-6xl font-black font-display tracking-tight text-white uppercase mt-2">
-            Technical Proficiency
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-white uppercase mt-2">
+            Technical Proficiency & Credentials
           </h2>
-          <div className="w-16 h-[3px] bg-[#FF2A2A] mx-auto mt-4" />
+          <div className="w-12 h-[2px] bg-[#FF2A2A] mx-auto mt-4" />
           <p className="mt-4 text-zinc-400 text-sm md:text-base font-light">
-            Comprehensive foundation in algorithms, scalable web architectures, machine learning pipelines, and 17+ verified credentials.
+            Algorithmic mastery in Java & Python, distributed event systems, computer vision pipelines, and 21+ verified hackathon & institutional credentials.
           </p>
         </div>
 

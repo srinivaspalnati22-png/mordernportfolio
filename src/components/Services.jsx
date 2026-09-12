@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'framer-motion';
+import { Terminal, Cpu, Server, Rocket, CheckCircle2, Layers, ShieldCheck } from 'lucide-react';
 
 export default function Services() {
   const containerRef = useRef(null);
@@ -29,7 +30,7 @@ export default function Services() {
     restDelta: 0.001
   });
 
-  // Connect intersection observer to activate cards when they cross near middle of screen
+  // Connect scroll listener to activate cards progressively
   useEffect(() => {
     const handleScrollActivation = () => {
       if (!containerRef.current) return;
@@ -47,171 +48,184 @@ export default function Services() {
     };
 
     window.addEventListener('scroll', handleScrollActivation);
-    // Initial call
     handleScrollActivation();
-
     return () => window.removeEventListener('scroll', handleScrollActivation);
   }, []);
+
+  const steps = [
+    {
+      num: "01",
+      title: "System Architecture & Data Modeling",
+      badge: "High-Throughput Design",
+      icon: <Layers className="w-5 h-5 text-[#FF2A2A]" />,
+      desc: "Architecting event-driven pipelines, designing normalized relational & document schemas, mapping REST/WebSocket protocols, and defining < 200ms latency SLAs.",
+      ref: card1Ref,
+      isActive: activeCards.step1,
+      align: "justify-end md:pr-12",
+      rotate: "rotate-[1deg]"
+    },
+    {
+      num: "02",
+      title: "Algorithmic Engineering & Complexity Pruning",
+      badge: "Java & DSA Optimization",
+      icon: <Cpu className="w-5 h-5 text-amber-400" />,
+      desc: "Implementing optimized data structures, eliminating algorithmic bottlenecks, optimizing memory & CPU complexity to O(N log N) or O(1), and hardening edge-case handling.",
+      ref: card2Ref,
+      isActive: activeCards.step2,
+      align: "justify-start md:pl-12",
+      rotate: "rotate-[-1deg]"
+    },
+    {
+      num: "03",
+      title: "Full-Stack Integration & AI Inference",
+      badge: "FastAPI, React & CV Models",
+      icon: <Server className="w-5 h-5 text-cyan-400" />,
+      desc: "Connecting responsive React frontends with asynchronous Python backends, integrating PyTorch/OpenCV deep learning pipelines, and synchronizing real-time state via WebSockets.",
+      ref: card3Ref,
+      isActive: activeCards.step3,
+      align: "justify-end md:pr-12",
+      rotate: "rotate-[1deg]"
+    },
+    {
+      num: "04",
+      title: "Containerized Deployment & Production Health",
+      badge: "Docker, Cloud & Edge Monitoring",
+      icon: <Rocket className="w-5 h-5 text-emerald-400" />,
+      desc: "Containerizing services with Docker, deploying to edge cloud infrastructures, configuring automated CI/CD builds, and establishing real-time telemetry logging.",
+      ref: card4Ref,
+      isActive: activeCards.step4,
+      align: "justify-start md:pl-12",
+      rotate: "rotate-[-1deg]"
+    }
+  ];
 
   return (
     <section 
       id="services" 
       ref={containerRef}
-      className="relative w-full py-28 bg-white text-[#111111] bg-grid-pattern overflow-hidden"
+      className="relative w-full py-28 bg-[#08080b] text-white overflow-hidden border-b border-white/5"
     >
-      
-      {/* Services Header */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center max-w-4xl mx-auto mb-24">
-        <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-black/10 text-xs font-semibold uppercase tracking-wider bg-zinc-50 shadow-sm mb-4">
-          How we work
-        </span>
-        <div className="relative inline-block max-w-2xl">
-          <h2 className="text-4xl md:text-6xl font-black font-display tracking-tight leading-none uppercase text-black">
-            Let us show you how we drive your brand to new heights
-          </h2>
-          {/* Handwritten-style Sketch Arrow SVG beside the heading */}
-          <div className="absolute -right-16 md:-right-24 -top-8 w-16 h-16 md:w-20 md:h-20 text-[#FF2A2A] hidden sm:block rotate-12">
-            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" className="w-full h-full">
-              <path d="M10,80 C25,50 45,30 80,45" />
-              <path d="M65,30 C72,35 80,45 80,45 C80,45 70,60 65,65" />
-            </svg>
-          </div>
+      {/* Background ambient lighting and dark technical grid */}
+      <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-[#FF2A2A]/5 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute inset-0 bg-grid-dark opacity-30 pointer-events-none" />
+
+      {/* Header */}
+      <div className="max-w-3xl mx-auto px-6 md:px-12 relative z-10 text-center mb-20">
+        <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#FF2A2A]/10 border border-[#FF2A2A]/20 text-[11px] font-mono text-[#FF2A2A] uppercase tracking-widest mb-3">
+          <Terminal className="w-3.5 h-3.5" />
+          <span>Engineering SDLC & Execution Lifecycle</span>
         </div>
-        <p className="mt-6 text-zinc-500 font-light max-w-lg mx-auto text-sm md:text-base leading-relaxed">
-          Our development cycle is structured to refine details, minimize delivery friction, and engineer high-performance systems.
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-white uppercase leading-tight">
+          From System Architecture to Production Deployment
+        </h2>
+        <div className="w-12 h-[2px] bg-[#FF2A2A] mx-auto mt-4" />
+        <p className="mt-4 text-zinc-400 font-light text-sm md:text-base leading-relaxed">
+          A disciplined, production-first development workflow centered on rigorous algorithmic foundations, low-latency microservices, and robust cloud deployment.
         </p>
       </div>
 
       {/* Main Process Timeline Container */}
-      <div className="relative max-w-5xl mx-auto px-6 md:px-12 min-h-[1200px] flex flex-col justify-between py-16">
+      <div className="relative max-w-5xl mx-auto px-6 md:px-12 min-h-[1100px] flex flex-col justify-between py-12">
         
-        {/* SVG Curve Background */}
+        {/* SVG Glowing Curve Background */}
         <div className="absolute inset-0 w-full h-full flex justify-center pointer-events-none z-0">
           <svg 
             width="100%" 
             height="100%" 
             viewBox="0 0 800 1200" 
             preserveAspectRatio="none" 
-            className="w-full h-full opacity-30"
+            className="w-full h-full opacity-40"
           >
-            {/* Base dashed grey line */}
+            {/* Base dashed line */}
             <path 
               d="M400,0 C750,250 750,350 400,600 C50,850 50,950 400,1200" 
               fill="none" 
-              stroke="#e4e4e7" 
-              strokeWidth="4" 
-              strokeDasharray="8,8"
+              stroke="#27272a" 
+              strokeWidth="3" 
+              strokeDasharray="6,6"
             />
-            {/* Animated scroll-driven path drawing */}
+            {/* Animated scroll-driven glowing trace */}
             <motion.path 
               d="M400,0 C750,250 750,350 400,600 C50,850 50,950 400,1200" 
               fill="none" 
               stroke="#FF2A2A" 
-              strokeWidth="5" 
-              strokeDasharray="8,8"
+              strokeWidth="4" 
+              strokeDasharray="6,6"
               style={{ pathLength: pathProgress }}
             />
           </svg>
         </div>
 
-        {/* Process Cards Layout Grid/Flex */}
-        {/* Card 01: Define */}
-        <div ref={card1Ref} className="relative w-full flex justify-end md:pr-12 mt-4 z-10">
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            className={`w-full md:w-[350px] p-8 rounded-[2rem] border transition-all duration-500 cursor-pointer shadow-lg relative ${
-              activeCards.step1 
-                ? 'bg-[#FF2A2A] border-[#FF2A2A] text-white rotate-[2deg] shadow-[0_20px_40px_rgba(255,42,42,0.25)]' 
-                : 'bg-white border-zinc-200 text-[#111111] rotate-[1deg] hover:border-zinc-300'
-            }`}
+        {/* Process Cards */}
+        {steps.map((step) => (
+          <div 
+            key={step.num}
+            ref={step.ref} 
+            className={`relative w-full flex ${step.align} z-10 my-6`}
           >
-            {/* Punch Hole detail */}
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-white border-2 border-zinc-200 flex items-center justify-center">
-              <div className="w-2.5 h-2.5 rounded-full bg-[#0a0a0a]" />
-            </div>
-            <div className={`text-4xl font-serif italic font-bold mb-4 ${activeCards.step1 ? 'text-black/50' : 'text-zinc-300'}`}>01</div>
-            <h3 className="text-xl font-bold font-display uppercase tracking-wider mb-2">Define</h3>
-            <p className={`text-xs md:text-sm font-light leading-relaxed ${activeCards.step1 ? 'text-white/80' : 'text-zinc-500'}`}>
-              Establishing scope, evaluating architecture design, mapping application endpoints, and defining project requirements to build a secure framework.
-            </p>
-          </motion.div>
-        </div>
+            <motion.div
+              whileHover={{ scale: 1.02, y: -4 }}
+              className={`w-full md:w-[390px] p-7 rounded-3xl border transition-all duration-500 cursor-pointer shadow-2xl relative backdrop-blur-xl ${
+                step.isActive 
+                  ? 'bg-zinc-950/90 border-[#FF2A2A]/70 text-white shadow-[0_0_35px_rgba(255,42,42,0.18)]' 
+                  : 'bg-zinc-900/60 border-white/10 text-white hover:border-white/30'
+              }`}
+            >
+              {/* Top Meta Bar */}
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center space-x-2.5">
+                  <div className={`p-2 rounded-xl border ${step.isActive ? 'bg-[#FF2A2A]/20 border-[#FF2A2A]/40' : 'bg-white/5 border-white/10'}`}>
+                    {step.icon}
+                  </div>
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-zinc-300">
+                    {step.badge}
+                  </span>
+                </div>
+                <div className={`text-2xl font-mono font-black ${step.isActive ? 'text-[#FF2A2A]' : 'text-zinc-600'}`}>
+                  {step.num}
+                </div>
+              </div>
 
-        {/* Card 02: Design */}
-        <div ref={card2Ref} className="relative w-full flex justify-start md:pl-12 mt-16 z-10">
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            className={`w-full md:w-[350px] p-8 rounded-[2rem] border transition-all duration-500 cursor-pointer shadow-lg relative ${
-              activeCards.step2 
-                ? 'bg-[#FF2A2A] border-[#FF2A2A] text-white rotate-[-2deg] shadow-[0_20px_40px_rgba(255,42,42,0.25)]' 
-                : 'bg-white border-zinc-200 text-[#111111] rotate-[-1deg] hover:border-zinc-300'
-            }`}
-          >
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-white border-2 border-zinc-200 flex items-center justify-center">
-              <div className="w-2.5 h-2.5 rounded-full bg-[#0a0a0a]" />
-            </div>
-            <div className={`text-4xl font-serif italic font-bold mb-4 ${activeCards.step2 ? 'text-black/50' : 'text-zinc-300'}`}>02</div>
-            <h3 className="text-xl font-bold font-display uppercase tracking-wider mb-2">Design</h3>
-            <p className={`text-xs md:text-sm font-light leading-relaxed ${activeCards.step2 ? 'text-white/80' : 'text-zinc-500'}`}>
-              Structuring responsive components, customizing clean layouts, embedding premium micro-animations, and planning intuitive client interactions.
-            </p>
-          </motion.div>
-        </div>
+              {/* Title & Description */}
+              <h3 className="text-lg font-bold font-display uppercase tracking-tight text-white mb-2">
+                {step.title}
+              </h3>
+              <p className="text-xs md:text-sm font-light text-zinc-300 leading-relaxed">
+                {step.desc}
+              </p>
 
-        {/* Card 03: Build */}
-        <div ref={card3Ref} className="relative w-full flex justify-end md:pr-12 mt-16 z-10">
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            className={`w-full md:w-[350px] p-8 rounded-[2rem] border transition-all duration-500 cursor-pointer shadow-lg relative ${
-              activeCards.step3 
-                ? 'bg-[#FF2A2A] border-[#FF2A2A] text-white rotate-[2deg] shadow-[0_20px_40px_rgba(255,42,42,0.25)]' 
-                : 'bg-white border-zinc-200 text-[#111111] rotate-[1deg] hover:border-zinc-300'
-            }`}
-          >
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-white border-2 border-zinc-200 flex items-center justify-center">
-              <div className="w-2.5 h-2.5 rounded-full bg-[#0a0a0a]" />
-            </div>
-            <div className={`text-4xl font-serif italic font-bold mb-4 ${activeCards.step3 ? 'text-black/50' : 'text-zinc-300'}`}>03</div>
-            <h3 className="text-xl font-bold font-display uppercase tracking-wider mb-2">Build</h3>
-            <p className={`text-xs md:text-sm font-light leading-relaxed ${activeCards.step3 ? 'text-white/80' : 'text-zinc-500'}`}>
-              Programming optimized frontends, setting up robust database models, creating APIs, and configuring generative intelligence.
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Card 04: Launch */}
-        <div ref={card4Ref} className="relative w-full flex justify-start md:pl-12 mt-16 z-10">
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            className={`w-full md:w-[350px] p-8 rounded-[2rem] border transition-all duration-500 cursor-pointer shadow-lg relative ${
-              activeCards.step4 
-                ? 'bg-[#FF2A2A] border-[#FF2A2A] text-white rotate-[-2deg] shadow-[0_20px_40px_rgba(255,42,42,0.25)]' 
-                : 'bg-white border-zinc-200 text-[#111111] rotate-[-1deg] hover:border-zinc-300'
-            }`}
-          >
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-white border-2 border-zinc-200 flex items-center justify-center">
-              <div className="w-2.5 h-2.5 rounded-full bg-[#0a0a0a]" />
-            </div>
-            <div className={`text-4xl font-serif italic font-bold mb-4 ${activeCards.step4 ? 'text-black/50' : 'text-zinc-300'}`}>04</div>
-            <h3 className="text-xl font-bold font-display uppercase tracking-wider mb-2">Launch</h3>
-            <p className={`text-xs md:text-sm font-light leading-relaxed ${activeCards.step4 ? 'text-white/80' : 'text-zinc-500'}`}>
-              Deploying on serverless platforms, running end-to-end user experience testing, securing environment keys, and delivering live links.
-            </p>
-          </motion.div>
-        </div>
+              {/* Status footer pill */}
+              <div className="mt-5 pt-3 border-t border-white/5 flex items-center justify-between text-[10px] font-mono">
+                <span className={step.isActive ? 'text-emerald-400 font-bold flex items-center space-x-1' : 'text-zinc-500'}>
+                  {step.isActive ? (
+                    <>
+                      <CheckCircle2 className="w-3 h-3" />
+                      <span>Pipeline Active</span>
+                    </>
+                  ) : (
+                    <span>Phase {step.num} Ready</span>
+                  )}
+                </span>
+                <span className="text-zinc-500">SDE Standard</span>
+              </div>
+            </motion.div>
+          </div>
+        ))}
 
       </div>
 
-      {/* Bottom Section */}
-      <div className="text-center mt-24 z-10 relative">
+      {/* Bottom Resilient Uptime Badge */}
+      <div className="text-center mt-12 z-10 relative">
         <motion.div
-          initial={{ opacity: 0, rotate: -5, scale: 0.9 }}
-          whileInView={{ opacity: 1, rotate: -2, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="inline-block text-2xl md:text-3xl font-serif italic text-zinc-400 font-bold bg-zinc-50 px-6 py-2 border border-zinc-200 rounded-lg shadow-sm"
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center space-x-2.5 px-6 py-3 rounded-full bg-zinc-900/80 border border-white/10 text-xs font-mono text-zinc-300 backdrop-blur-md shadow-2xl hover:border-emerald-500/40 transition-colors"
         >
-          Ready to be delivered!
+          <ShieldCheck className="w-4 h-4 text-emerald-400" />
+          <span>Engineered for Production Resilience • Clean Code • 99.9% Reliability</span>
         </motion.div>
       </div>
 

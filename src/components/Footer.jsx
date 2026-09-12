@@ -65,10 +65,11 @@ export default function Footer({ onOpenResume }) {
     <footer 
       id="contact"
       ref={footerRef}
-      className="relative w-full bg-[#0d0d0d] text-white pt-24 pb-12 overflow-hidden flex flex-col justify-between border-t border-white/10"
+      className="relative w-full bg-[#060608] text-white pt-24 pb-12 overflow-hidden flex flex-col justify-between border-t border-white/10"
     >
-      {/* Background ambient lighting */}
+      {/* Background ambient lighting and dark grid */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(255,42,42,0.12),transparent_70%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-grid-dark opacity-25 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10 flex-grow flex flex-col justify-between">
         

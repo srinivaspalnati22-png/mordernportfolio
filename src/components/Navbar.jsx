@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, FileText, Sparkles, ExternalLink } from 'lucide-react';
+import { Menu, X, FileText } from 'lucide-react';
 
 export default function Navbar({ onOpenResume }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,7 +37,7 @@ export default function Navbar({ onOpenResume }) {
     { label: 'Home', id: 'home' },
     { label: 'About', id: 'about' },
     { label: 'Skills', id: 'skills' },
-    { label: 'Process', id: 'services' },
+    { label: 'Workflow', id: 'services' },
     { label: 'Projects', id: 'projects' },
     { label: 'Contact', id: 'contact' },
   ];

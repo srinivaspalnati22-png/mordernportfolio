@@ -29,10 +29,11 @@ export default function ArchitectureViewer() {
   };
 
   return (
-    <section className="relative w-full py-20 bg-[#0c0c0f] text-white border-t border-b border-white/5 overflow-hidden">
+    <section className="relative w-full py-24 bg-[#070709] text-white border-b border-white/5 overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-[#FF2A2A]/5 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-blue-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-cyan-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute inset-0 bg-grid-dark opacity-30 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         

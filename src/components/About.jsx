@@ -1,229 +1,255 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, Code2, Cpu, FileText, CheckCircle2, Sparkles, ExternalLink } from 'lucide-react';
+import { Award, Code2, Sparkles, ExternalLink, Layers } from 'lucide-react';
+import profilePhoto from '/profile_photo.jpg';
 
 export default function About({ onOpenResume }) {
+  const coreTech = [
+    { name: 'Java', level: 'DSA & OOP', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
+    { name: 'Python', level: 'AI & Systems', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+    { name: 'React', level: 'Frontend UI', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    { name: 'FastAPI', level: 'Microservices', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg' },
+    { name: 'PostgreSQL', level: 'Relational DB', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+    { name: 'Docker', level: 'Containers', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' }
+  ];
+
   return (
-    <section id="about" className="relative w-full min-h-screen bg-[#FF2A2A] text-white pt-24 pb-36 overflow-hidden flex items-center">
+    <section id="about" className="relative w-full py-24 md:py-32 bg-[#07070a] text-white overflow-hidden border-t border-b border-white/5">
       
-      {/* Decorative Floating Black Stars */}
-      <div className="absolute top-12 left-10 w-8 h-8 text-black opacity-30 animate-pulse-slow">
-        <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
-          <path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z" />
-        </svg>
-      </div>
-      <div className="absolute bottom-24 right-12 w-12 h-12 text-black opacity-20 animate-float" style={{ animationDelay: '2s' }}>
-        <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
-          <path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z" />
-        </svg>
-      </div>
-      <div className="absolute top-1/2 right-1/4 w-6 h-6 text-black opacity-25 animate-pulse-slow" style={{ animationDelay: '1s' }}>
-        <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
-          <path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z" />
-        </svg>
-      </div>
+      {/* Background Ambient Glows & Technical Grid */}
+      <div className="absolute top-1/3 -left-32 w-96 h-96 bg-[#FF2A2A]/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 right-0 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute inset-0 bg-grid-dark opacity-40 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10">
         
-        {/* Left Column: Hanging Employee / SDE Conference ID Badge */}
-        <div className="lg:col-span-5 flex flex-col items-center relative pt-16 lg:pt-24">
-          
-          {/* Lanyard Strap hanging from screen top */}
-          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-6 h-40 bg-black rounded-b-md shadow-lg z-10" />
-          
-          {/* Metal Clip & Ring connector */}
-          <div className="absolute top-12 left-1/2 -translate-x-1/2 w-8 h-8 z-10 flex items-center justify-center">
-            <div className="w-6 h-6 rounded-full border-[3px] border-zinc-400 bg-transparent shadow" />
-            <div className="absolute top-4 w-4 h-6 bg-zinc-300 rounded-sm border border-zinc-500 shadow-md" />
+        {/* Section Header */}
+        <div className="text-left mb-16">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#FF2A2A]/10 border border-[#FF2A2A]/20 text-[11px] font-mono text-[#FF2A2A] uppercase tracking-widest mb-3">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Developer Profile & Engineering Philosophy</span>
           </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-white uppercase leading-tight max-w-3xl">
+            Building High-Throughput Software & Real-World AI Systems
+          </h2>
+        </div>
 
-          {/* ID Card Wrapper */}
-          <motion.div
-            initial={{ opacity: 0, y: 50, rotate: -8 }}
-            whileInView={{ opacity: 1, y: 0, rotate: -3 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, type: 'spring', bounce: 0.4 }}
-            whileHover={{ rotate: 1, scale: 1.03, y: -5 }}
-            className="relative w-80 bg-zinc-900 border-[3px] border-black rounded-2xl p-5 shadow-[10px_20px_40px_rgba(0,0,0,0.5)] cursor-pointer z-0 select-none overflow-hidden"
-          >
-            {/* Top Badge header */}
-            <div className="flex flex-col items-center justify-center pb-4 border-b border-white/10">
-              <div className="text-[10px] font-mono tracking-widest text-[#FF2A2A] font-black uppercase flex items-center space-x-1">
-                <span>SDE CANDIDATE PASS</span>
-              </div>
-              <div className="text-[9px] font-mono text-zinc-500 tracking-wider">
-                DEVPASS // 3RD YEAR B.TECH CSE
-              </div>
-            </div>
-
-            {/* Profile Photo Area */}
-            <div className="mt-5 w-full aspect-square rounded-xl overflow-hidden bg-zinc-800 border-2 border-black shadow-inner">
-              <img 
-                src="/prompt_image_2.png" 
-                alt="Palnati Pushpa Naga Venkata Srinivas" 
-                className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-500" 
-              />
-            </div>
-
-            {/* Card Info Area */}
-            <div className="mt-5 space-y-3 text-left">
-              <div className="space-y-1">
-                <span className="text-[9px] font-mono text-zinc-500 uppercase block tracking-wider">Name</span>
-                <span className="text-base font-black tracking-tight text-white font-display block uppercase leading-none">
-                  P P N V SRINIVAS
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
+          
+          {/* Left Column: Holographic Verified SDE Candidate Pass */}
+          <div className="lg:col-span-5 flex flex-col items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="w-full max-w-sm rounded-3xl bg-zinc-900/60 border border-white/10 p-6 shadow-2xl backdrop-blur-xl relative overflow-hidden group hover:border-[#FF2A2A]/40 transition-all duration-500"
+            >
+              {/* Top Card Badge */}
+              <div className="flex items-center justify-between pb-4 border-b border-white/10">
+                <div className="flex items-center space-x-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="text-[10px] font-mono font-bold tracking-widest text-emerald-400 uppercase">
+                    ACTIVE CANDIDATE
+                  </span>
+                </div>
+                <span className="text-[10px] font-mono text-zinc-400 tracking-wider">
+                  DEVPASS // 2026
                 </span>
               </div>
-              <div className="grid grid-cols-2 gap-2 border-t border-white/5 pt-2">
-                <div>
-                  <span className="text-[8px] font-mono text-zinc-500 uppercase block">TARGET</span>
-                  <span className="text-[10px] font-mono text-white font-bold">PRODUCT SDE</span>
-                </div>
-                <div>
-                  <span className="text-[8px] font-mono text-zinc-500 uppercase block">CORE</span>
-                  <span className="text-[10px] font-mono text-[#FF2A2A] font-bold">JAVA • AI/ML</span>
+
+              {/* Portrait Frame */}
+              <div className="mt-5 w-full aspect-[4/3.8] rounded-2xl overflow-hidden bg-zinc-950 border border-white/15 relative shadow-inner">
+                <img 
+                  src={profilePhoto} 
+                  alt="Palnati Pushpa Naga Venkata Srinivas" 
+                  className="w-full h-full object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-700 ease-out" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono">
+                  <span className="px-2 py-0.5 rounded-md bg-black/70 border border-white/20 text-white backdrop-blur-md">
+                    Palnati Srinivas
+                  </span>
+                  <span className="px-2 py-0.5 rounded-md bg-[#FF2A2A]/80 text-white font-bold backdrop-blur-md">
+                    3rd Year B.Tech
+                  </span>
                 </div>
               </div>
-            </div>
 
-            {/* Barcode */}
-            <div className="mt-6 border-t border-white/10 pt-4 flex flex-col items-center space-y-1.5">
-              <div className="w-full h-8 flex justify-between items-center px-2 bg-white rounded-sm py-1">
-                {[...Array(26)].map((_, idx) => (
-                  <div 
-                    key={idx} 
-                    className="h-full bg-black"
-                    style={{ 
-                      width: `${[2, 1, 3, 1, 4, 2, 1, 3, 2, 1, 4, 1, 3, 2, 1, 1, 2, 3, 1, 4, 1, 2, 1, 3, 2, 1][idx]}px` 
-                    }}
-                  />
+              {/* Candidate Info Grid */}
+              <div className="mt-5 space-y-3 text-left text-xs font-mono">
+                <div className="p-3 rounded-xl bg-white/5 border border-white/5 space-y-1">
+                  <div className="text-[10px] text-zinc-400 uppercase tracking-wider">Target Objective</div>
+                  <div className="text-white font-bold">Product-Based SDE & AI Systems Engineer</div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="p-2.5 rounded-xl bg-white/5 border border-white/5">
+                    <div className="text-[9px] text-zinc-400 uppercase">Core Language</div>
+                    <div className="text-amber-400 font-bold mt-0.5">Java + DSA</div>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-white/5 border border-white/5">
+                    <div className="text-[9px] text-zinc-400 uppercase">Specialization</div>
+                    <div className="text-cyan-400 font-bold mt-0.5">Distributed & AI</div>
+                  </div>
+                </div>
+
+                <div className="p-2.5 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between">
+                  <div className="text-[10px] text-zinc-400">Location</div>
+                  <div className="text-zinc-200 font-bold">Andhra Pradesh, India</div>
+                </div>
+              </div>
+
+              {/* Verified Barcode & CTA */}
+              <div className="mt-5 pt-4 border-t border-white/10 flex flex-col items-center space-y-3">
+                <div className="w-full h-7 flex justify-between items-center px-3 bg-white/95 rounded-md py-1">
+                  {[...Array(28)].map((_, idx) => (
+                    <div 
+                      key={idx} 
+                      className="h-full bg-black"
+                      style={{ 
+                        width: `${[2, 1, 3, 1, 4, 2, 1, 3, 2, 1, 4, 1, 3, 2, 1, 1, 2, 3, 1, 4, 1, 2, 1, 3, 2, 1, 2, 1][idx]}px` 
+                      }}
+                    />
+                  ))}
+                </div>
+                <div className="flex items-center justify-between w-full text-[10px] font-mono text-zinc-400">
+                  <span>ID: PALNATI-SDE-2026</span>
+                  <button 
+                    onClick={onOpenResume}
+                    className="text-[#FF2A2A] hover:underline font-bold uppercase cursor-pointer"
+                  >
+                    View Resume →
+                  </button>
+                </div>
+              </div>
+
+            </motion.div>
+          </div>
+
+          {/* Right Column: Structured Narrative & Pillars */}
+          <div className="lg:col-span-7 text-left space-y-8">
+            
+            {/* Biography & Mission Statement */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="space-y-4"
+            >
+              <h3 className="text-xl sm:text-2xl font-bold font-display uppercase tracking-tight text-white">
+                Palnati Pushpa Naga Venkata Srinivas
+              </h3>
+              
+              <p className="text-zinc-300 font-light text-base md:text-lg leading-relaxed">
+                I am an aspiring <strong className="text-white font-semibold">Software Development Engineer (SDE)</strong> in my 3rd year of B.Tech Computer Science & Engineering. My primary technical focus centers on <strong className="text-amber-400 font-medium">Java Data Structures & Algorithms</strong>, rigorous algorithmic problem-solving on LeetCode, and engineering production-grade distributed architectures.
+              </p>
+
+              <p className="text-zinc-400 font-light text-sm md:text-base leading-relaxed">
+                Rather than treating theory in isolation, I bridge computer science fundamentals directly into functional software. Over the past year, I have architected and deployed <strong className="text-white font-medium">7+ production platforms</strong> — ranging from autonomous emergency triage (<strong className="text-[#FF2A2A] font-medium">RESQONE AI</strong>) to multimodal facial blood flow forensics (<strong className="text-purple-400 font-medium">Pulsevein</strong>).
+              </p>
+            </motion.div>
+
+            {/* Core Competency Pillars */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+            >
+              {/* Pillar 1 */}
+              <a 
+                href="https://leetcode.com/u/srinivaspalnati22-png/" 
+                target="_blank" 
+                rel="noreferrer"
+                className="p-5 rounded-2xl bg-zinc-900/60 border border-white/10 hover:border-amber-500/40 transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="p-2 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                      <Code2 className="w-4 h-4" />
+                    </span>
+                    <ExternalLink className="w-4 h-4 text-zinc-500 group-hover:text-amber-400 transition-colors" />
+                  </div>
+                  <h4 className="text-base font-bold text-white group-hover:text-amber-400 transition-colors font-display uppercase tracking-wide">
+                    LeetCode & Java DSA
+                  </h4>
+                  <p className="text-xs text-zinc-400 mt-1 leading-relaxed">
+                    Consistent daily practice solving Array, Tree, Graph, and Dynamic Programming problems in Java with optimized complexity.
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-amber-400 font-bold">
+                  <span>300+ Problems Solved</span>
+                  <span>View LeetCode →</span>
+                </div>
+              </a>
+
+              {/* Pillar 2 */}
+              <div className="p-5 rounded-2xl bg-zinc-900/60 border border-white/10 hover:border-[#FF2A2A]/40 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="p-2 rounded-xl bg-[#FF2A2A]/10 text-[#FF2A2A] border border-[#FF2A2A]/20">
+                      <Award className="w-4 h-4" />
+                    </span>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#FF2A2A]/10 text-[#FF2A2A] border border-[#FF2A2A]/20 uppercase">
+                      1st Prize
+                    </span>
+                  </div>
+                  <h4 className="text-base font-bold text-white group-hover:text-red-400 transition-colors font-display uppercase tracking-wide">
+                    Hackathons & Innovation
+                  </h4>
+                  <p className="text-xs text-zinc-400 mt-1 leading-relaxed">
+                    Winner at CREATHON Hackathon 2026 and national finalist across multiple 24-hour engineering sprints building autonomous prototypes.
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-zinc-300">
+                  <span>5+ National Events</span>
+                  <span className="text-[#FF2A2A] font-bold">Validated Execution</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Core Tech Stack Micro-Cards */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="space-y-3 pt-2"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono uppercase tracking-widest text-zinc-400 font-bold flex items-center space-x-1.5">
+                  <Layers className="w-3.5 h-3.5 text-[#FF2A2A]" />
+                  <span>Primary Languages & Core CS Technologies</span>
+                </span>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2.5">
+                {coreTech.map((tech) => (
+                  <div
+                    key={tech.name}
+                    className="p-3 rounded-2xl bg-zinc-900/50 border border-white/10 hover:border-white/30 hover:bg-zinc-800/60 transition-all duration-300 flex flex-col items-center text-center group cursor-default"
+                  >
+                    <div className="w-8 h-8 mb-2 flex items-center justify-center">
+                      <img 
+                        src={tech.url} 
+                        alt={tech.name} 
+                        className="w-full h-full object-contain filter group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.4)] transition-all" 
+                      />
+                    </div>
+                    <div className="text-xs font-bold text-white font-mono">{tech.name}</div>
+                    <div className="text-[9px] font-mono text-zinc-400 mt-0.5">{tech.level}</div>
+                  </div>
                 ))}
               </div>
-              <span className="text-[8px] font-mono text-zinc-500 tracking-widest">
-                *GITHUB-SRINIVASPALNATI22-PNG*
-              </span>
-            </div>
-          </motion.div>
-        </div>
+            </motion.div>
 
-        {/* Right Column: Content */}
-        <div className="lg:col-span-7 text-left space-y-6">
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-6xl md:text-8xl font-black font-display tracking-tighter text-black uppercase leading-none select-none">
-              About Me
-            </h2>
-            <h3 className="text-xl md:text-2xl font-bold tracking-tight text-white mt-4 uppercase">
-              PALNATI PUSHPA NAGA VENKATA SRINIVAS
-            </h3>
-            <div className="text-sm font-mono text-black font-bold uppercase tracking-wider mt-1">
-              3rd Year B.Tech CSE // Learning Java + DSA // Aspiring SDE & AI Engineer
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="space-y-4 text-white/95 font-light text-base md:text-lg leading-relaxed max-w-2xl"
-          >
-            <p>
-              I am a <strong className="text-black font-bold">3rd-Year B.Tech Computer Science Engineering student</strong> actively learning and mastering <strong className="text-black font-bold">Java + Data Structures & Algorithms (DSA)</strong> on LeetCode, <strong className="text-black font-bold">System Design fundamentals</strong>, and <strong className="text-black font-bold">Production-Grade AI Pipelines</strong>.
-            </p>
-            <p className="text-zinc-100">
-              I believe in shipping real software. Over the past year, I have engineered and deployed <strong>7+ AI platforms</strong> spanning autonomous emergency triage (<strong className="text-black font-bold">RESQONE AI</strong>), multimodal rPPG deepfake forensics (<strong className="text-black font-bold">Pulsevein</strong>), and cybersecurity scam defense.
-            </p>
-          </motion.div>
-
-          {/* Competitive Programming & SDE Highlights */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2"
-          >
-            <a 
-              href="https://leetcode.com/u/srinivaspalnati22-png/" 
-              target="_blank" 
-              rel="noreferrer"
-              className="p-4 rounded-2xl bg-black/80 border border-black/40 hover:border-white transition-all flex items-center justify-between group"
-            >
-              <div className="space-y-1">
-                <span className="text-[10px] font-mono text-amber-400 font-bold uppercase">Competitive Programming</span>
-                <h4 className="text-sm font-bold text-white group-hover:text-amber-400 transition-colors">LeetCode • Java & DSA</h4>
-                <p className="text-xs text-zinc-400">Daily algorithmic problem solving</p>
-              </div>
-              <ExternalLink className="w-4 h-4 text-zinc-400 group-hover:text-white" />
-            </a>
-
-            <a 
-              href="https://www.hackerrank.com/profile/srinivaspalnati1" 
-              target="_blank" 
-              rel="noreferrer"
-              className="p-4 rounded-2xl bg-black/80 border border-black/40 hover:border-white transition-all flex items-center justify-between group"
-            >
-              <div className="space-y-1">
-                <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase">Algorithm Mastery</span>
-                <h4 className="text-sm font-bold text-white group-hover:text-emerald-400 transition-colors">HackerRank Certified</h4>
-                <p className="text-xs text-zinc-400">Data structures & logic design</p>
-              </div>
-              <ExternalLink className="w-4 h-4 text-zinc-400 group-hover:text-white" />
-            </a>
-          </motion.div>
-
-          {/* Core Tech Stack Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="pt-4"
-          >
-            <h4 className="text-xs font-mono uppercase tracking-widest text-black/70 font-black mb-4">
-              Core Languages & Frameworks
-            </h4>
-            <div className="flex flex-wrap gap-4">
-              {[
-                { name: 'Java', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
-                { name: 'Python', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-                { name: 'React', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-                { name: 'FastAPI', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg' },
-                { name: 'PostgreSQL', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
-                { name: 'Docker', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' }
-              ].map((logo, idx) => (
-                <motion.div
-                  key={logo.name}
-                  whileHover={{ scale: 1.15, y: -6 }}
-                  className="w-14 h-14 bg-zinc-950/90 p-3 rounded-2xl flex items-center justify-center border border-black/30 shadow-xl cursor-pointer"
-                  title={logo.name}
-                >
-                  <img 
-                    src={logo.url} 
-                    alt={logo.name} 
-                    className="w-full h-full object-contain filter drop-shadow" 
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+          </div>
 
         </div>
-      </div>
 
-      {/* Bottom Divider: Torn-paper SVG transition */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10">
-        <svg 
-          viewBox="0 0 1200 120" 
-          preserveAspectRatio="none" 
-          className="relative block w-full h-16 md:h-24 fill-[#0c0c0f]"
-        >
-          <path d="M0,0 C150,90 350,15 500,75 C680,147 850,20 1000,90 C1100,136 1150,110 1200,85 L1200,120 L0,120 Z" />
-        </svg>
       </div>
 
     </section>
