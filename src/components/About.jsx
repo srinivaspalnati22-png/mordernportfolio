@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Award, Code2, Sparkles, ExternalLink, Layers } from 'lucide-react';
-import profilePhoto from '/profile_photo.jpg';
 
 export default function About({ onOpenResume }) {
   const coreTech = [
@@ -61,9 +60,9 @@ export default function About({ onOpenResume }) {
               {/* Portrait Frame */}
               <div className="mt-5 w-full aspect-[4/3.8] rounded-2xl overflow-hidden bg-zinc-950 border border-white/15 relative shadow-inner">
                 <img 
-                  src={profilePhoto} 
+                  src="/prompt_image_2.png" 
                   alt="Palnati Pushpa Naga Venkata Srinivas" 
-                  className="w-full h-full object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-700 ease-out" 
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono">
