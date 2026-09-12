@@ -154,6 +154,50 @@ export default function Skills({ onOpenResume }) {
 
   const professionalCertifications = [
     {
+      id: "cert-tata-genai-analytics",
+      title: "GenAI Powered Data Analytics Job Simulation",
+      issuer: "Tata Insights and Quants & Forage",
+      date: "September 04, 2026",
+      type: "GenAI & Analytics",
+      credId: "6a99046567148864d216acdc",
+      image: "/certificates/tata_genai_analytics.png",
+      hasRealCert: true,
+      desc: "Completed practical simulation tasks in exploratory data analysis and risk profiling, predicting delinquency with AI, and AI-driven business strategy & collections reporting."
+    },
+    {
+      id: "cert-cisco-python-essentials-2",
+      title: "Python Essentials 2",
+      issuer: "Cisco Networking Academy & OpenEDG Python Institute",
+      date: "September 10, 2026",
+      type: "Advanced Python & OOP",
+      credId: "5598af2c-5295-4f51-b75a-a5760a38015d",
+      image: "/certificates/cisco_python_essentials_2.png",
+      hasRealCert: true,
+      desc: "Certified by Cisco Networking Academy and Python Institute covering OOP (classes, inheritance, polymorphism), modules and packages, string/list processing, exceptions, generators, and file processing."
+    },
+    {
+      id: "cert-ibm-ai-fundamentals",
+      title: "AI Fundamentals: Foundations for Understanding AI",
+      issuer: "IBM SkillsBuild & Credly",
+      date: "September 11, 2026",
+      type: "AI & Deep Learning",
+      credId: "Credly: w0SYoIz1",
+      image: "/certificates/ibm_ai_fundamentals.png",
+      hasRealCert: true,
+      desc: "Accredited credential issued by IBM SkillsBuild establishing foundational mastery of AI architectures, machine learning algorithms, deep neural nets, computer vision, NLP, and ethical AI development."
+    },
+    {
+      id: "cert-nptel-cloud-computing",
+      title: "Cloud Computing (Consolidated Score: 56%)",
+      issuer: "NPTEL, IIT Kharagpur & SWAYAM (MoE Govt of India)",
+      date: "Jan–Apr 2026 (12-Week Course)",
+      type: "Cloud & Distributed Systems",
+      credId: "NPTEL26CS55S968101313",
+      image: "/certificates/nptel_cloud_computing.png",
+      hasRealCert: true,
+      desc: "Rigorous 12-week national certification course funded by MoE, Govt. of India. Scored 25/25 in assignments & proctored examination covering cloud service models (IaaS/PaaS/SaaS), virtualization, resource management, and distributed systems."
+    },
+    {
       id: "cert-nipam",
       title: "National Intellectual Property Awareness Mission (NIPAM)",
       issuer: "Government of India, Ministry of Commerce & Industry",
@@ -447,7 +491,7 @@ export default function Skills({ onOpenResume }) {
             </div>
           </motion.div>
 
-          {/* Professional & Technical Certifications (9 Items) */}
+          {/* Professional & Technical Certifications ({professionalCertifications.length} Items) */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -464,11 +508,11 @@ export default function Skills({ onOpenResume }) {
               </div>
               <a 
                 href="https://www.linkedin.com/in/palnati-pushpa-naga-venkata-srinivas-661744413/"
-                target="_blank"
+                target="_blank" 
                 rel="noreferrer"
                 className="text-xs font-mono text-sky-400 hover:underline flex items-center space-x-1"
               >
-                <span>9 Credentials</span>
+                <span>{professionalCertifications.length} Credentials</span>
                 <ExternalLink className="w-3 h-3" />
               </a>
             </div>

@@ -87,13 +87,19 @@ Relevant Coursework: Data Structures & Algorithms (Java), Analysis of Algorithms
 ================================================================================
 VERIFIED CERTIFICATIONS (LINKEDIN VERIFIED)
 ================================================================================
+* GenAI Powered Data Analytics Job Simulation — Tata Insights & Quants / Forage (Sep 2026)
+* Python Essentials 2 — Cisco Networking Academy & OpenEDG Python Institute (Sep 2026)
+* AI Fundamentals: Foundations for Understanding AI — IBM SkillsBuild & Credly (Sep 2026)
+* Cloud Computing (Consolidated Score: 56%) — NPTEL, IIT Kharagpur & SWAYAM (Jan-Apr 2026)
 * Explore Machine Learning Using Python — Infosys Springboard (Jun 2025)
 * Software Engineering Principles & Methodologies — Infosys Springboard (Aug 2025)
 * Introduction to Deep Learning & Neural Architectures — Infosys Springboard (Aug 2025)
 * Introduction to Natural Language Processing (NLP) — Infosys Springboard (Aug 2025)
 * Prompt Engineering & Generative AI Application Design — Infosys Springboard (Jun 2025)
 * National Intellectual Property (IP) Awareness & Training Program (NIPAM) — IP Office of India, Ministry of Commerce & Industry (Sep 2025)
-* Full Stack & Python Acceleration Programs — LetsUpgrade Learning
+* Python (Basic) Skill Certification — HackerRank (Oct 2025)
+* AI for Beginners Certification — HP LIFE Foundation (Jul 2026)
+* Build with AI: Gemini YouTube Summarizer — LetsUpgrade Learning (Apr 2025)
 `;
 
   const handlePrint = () => {
@@ -376,6 +382,10 @@ VERIFIED CERTIFICATIONS (LINKEDIN VERIFIED)
                       Verified Certifications
                     </h2>
                     <ul className="list-disc list-outside ml-4 space-y-0.5 text-[11px] text-zinc-800">
+                      <li><strong>Tata / Forage</strong> — GenAI Powered Data Analytics Job Simulation (Sep 2026)</li>
+                      <li><strong>Cisco & Python Institute</strong> — Python Essentials 2 (Sep 2026)</li>
+                      <li><strong>IBM SkillsBuild & Credly</strong> — AI Fundamentals: Foundations for Understanding AI (Sep 2026)</li>
+                      <li><strong>NPTEL / IIT Kharagpur</strong> — Cloud Computing 12-Week Certification (Score: 56%)</li>
                       <li><strong>NIPAM</strong> — Govt of India Intellectual Property Office (Sep 2025)</li>
                       <li><strong>HackerRank</strong> — Python (Basic) Skill Certified (ID: A63A050D8705)</li>
                       <li><strong>HP LIFE Foundation</strong> — AI for Beginners (July 2026)</li>
@@ -457,8 +467,8 @@ VERIFIED CERTIFICATIONS (LINKEDIN VERIFIED)
                     <div className="text-[10px] font-mono text-zinc-400 uppercase">DSA Focus</div>
                   </div>
                   <div className="p-3 rounded-2xl bg-white/5 border border-white/5">
-                    <div className="text-2xl font-black font-display text-emerald-400">7 Certs</div>
-                    <div className="text-[10px] font-mono text-zinc-400 uppercase">Infosys & NIPAM</div>
+                    <div className="text-2xl font-black font-display text-emerald-400">13 Certs</div>
+                    <div className="text-[10px] font-mono text-zinc-400 uppercase">Verified Credentials</div>
                   </div>
                 </div>
               </div>
@@ -505,13 +515,19 @@ VERIFIED CERTIFICATIONS (LINKEDIN VERIFIED)
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
                   {[
+                    { title: "GenAI Powered Data Analytics Job Simulation", org: "Tata Insights & Quants / Forage", date: "Sep 2026" },
+                    { title: "Python Essentials 2", org: "Cisco Networking Academy & Python Institute", date: "Sep 2026" },
+                    { title: "AI Fundamentals: Foundations for Understanding AI", org: "IBM SkillsBuild & Credly", date: "Sep 2026" },
+                    { title: "Cloud Computing Certification (Score: 56%)", org: "NPTEL, IIT Kharagpur & SWAYAM", date: "Jan–Apr 2026" },
                     { title: "Explore Machine Learning Using Python", org: "Infosys Springboard", date: "Jun 2025" },
                     { title: "Software Engineering Principles & Methodologies", org: "Infosys Springboard", date: "Aug 2025" },
                     { title: "Introduction to Deep Learning & Neural Nets", org: "Infosys Springboard", date: "Aug 2025" },
                     { title: "Introduction to Natural Language Processing (NLP)", org: "Infosys Springboard", date: "Aug 2025" },
                     { title: "Prompt Engineering & Generative AI Design", org: "Infosys Springboard", date: "Jun 2025" },
                     { title: "National IP Awareness & Training (NIPAM)", org: "IP Office of India, Govt of India", date: "Sep 2025" },
-                    { title: "Full Stack & Python Acceleration Programs", org: "LetsUpgrade Learning", date: "2025" }
+                    { title: "Python (Basic) Skill Certification", org: "HackerRank", date: "Oct 2025" },
+                    { title: "AI for Beginners Certification", org: "HP LIFE Foundation", date: "Jul 2026" },
+                    { title: "Build with AI: Gemini YouTube Summarizer", org: "LetsUpgrade Learning", date: "Apr 2025" }
                   ].map((c, i) => (
                     <div key={i} className="p-3.5 rounded-2xl bg-white/5 border border-white/5 flex items-start space-x-3">
                       <ShieldCheck className="w-4 h-4 text-[#FF2A2A] shrink-0 mt-0.5" />
