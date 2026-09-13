@@ -367,9 +367,9 @@ export default function Hero({ onOpenResume }) {
                   
                   {/* High-Resolution Developer Portrait */}
                   <img
-                    src={profilePhoto}
+                    src="/persona/hero_suit.png"
                     alt="Palnati Pushpa Naga Venkata Srinivas"
-                    className="absolute inset-0 w-full h-full object-cover object-[center_18%] brightness-105 scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className="absolute inset-0 w-full h-full object-cover object-[center_12%] brightness-105 scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
 
                   {/* Smooth Studio Vignette Overlay */}

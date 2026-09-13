@@ -60,10 +60,13 @@ export default function About({ onOpenResume }) {
               {/* Portrait Frame */}
               <div className="mt-5 w-full aspect-[4/3.8] rounded-2xl overflow-hidden bg-zinc-950 border border-white/15 relative shadow-inner">
                 <img 
-                  src="/prompt_image_2.png" 
+                  src="/persona/about_pointing.png" 
                   alt="Palnati Pushpa Naga Venkata Srinivas" 
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" 
+                  className="w-full h-full object-cover object-[center_15%] group-hover:scale-105 transition-transform duration-700 ease-out" 
                 />
+                <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full bg-[#FF2A2A]/80 border border-white/20 text-[9px] font-mono font-bold text-white shadow-lg backdrop-blur-md">
+                  That's Me! 👈
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono">
                   <span className="px-2 py-0.5 rounded-md bg-black/70 border border-white/20 text-white backdrop-blur-md">

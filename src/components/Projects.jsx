@@ -128,9 +128,9 @@ export default function Projects() {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
-          <div className="text-left">
+        {/* Section Header with Builder Spotlight */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-12">
+          <div className="lg:col-span-8 text-left">
             <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#FF2A2A]/10 border border-[#FF2A2A]/20 text-[11px] font-mono text-[#FF2A2A] uppercase tracking-widest mb-3">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Production Systems & Open Source</span>
@@ -138,10 +138,33 @@ export default function Projects() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-white uppercase leading-tight">
               Featured Engineering Systems
             </h2>
+            <p className="text-zinc-400 font-light text-left mt-4 leading-relaxed text-sm md:text-base max-w-2xl">
+              Autonomous emergency triage platforms, deep learning computer vision pipelines, and production microservices with live deployments.
+            </p>
           </div>
-          <p className="text-zinc-400 font-light max-w-md text-left mt-4 md:mt-0 leading-relaxed text-sm md:text-base">
-            Autonomous emergency triage platforms, deep learning computer vision pipelines, and production microservices with live deployments.
-          </p>
+
+          {/* Builder Spotlight Persona Card */}
+          <div className="lg:col-span-4 flex justify-center lg:justify-end">
+            <div className="relative group p-3.5 rounded-3xl bg-zinc-950/80 border border-white/10 hover:border-[#FF2A2A]/40 transition-all shadow-xl flex items-center gap-4 max-w-sm w-full">
+              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border border-white/10 shrink-0 bg-zinc-900">
+                <img 
+                  src="/persona/projects_builder.png" 
+                  alt="Srinivas Palnati - Building Ideas into Impact" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="text-left space-y-1">
+                <span className="inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider text-amber-400 font-bold bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">
+                  <Star className="w-2.5 h-2.5" />
+                  Building Impact
+                </span>
+                <h4 className="text-sm sm:text-base font-bold text-white font-display">Systems Builder</h4>
+                <p className="text-xs text-zinc-400 font-light leading-relaxed">
+                  Translating complex AI and real-time systems into shipped, production-grade applications.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Filter Tabs */}

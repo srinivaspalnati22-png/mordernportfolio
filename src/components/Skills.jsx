@@ -307,19 +307,44 @@ export default function Skills({ onOpenResume }) {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#FF2A2A] font-bold flex items-center justify-center space-x-1.5">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Product SDE Competencies</span>
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-white uppercase mt-2">
-            Technical Proficiency & Credentials
-          </h2>
-          <div className="w-12 h-[2px] bg-[#FF2A2A] mx-auto mt-4" />
-          <p className="mt-4 text-zinc-400 text-sm md:text-base font-light">
-            Algorithmic mastery in Java & Python, distributed event systems, computer vision pipelines, and 21+ verified hackathon & institutional credentials.
-          </p>
+        {/* Header with Persona Showcase */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-16">
+          <div className="lg:col-span-8 text-center lg:text-left">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#FF2A2A] font-bold inline-flex items-center space-x-1.5">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Product SDE Competencies</span>
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-white uppercase mt-2">
+              Technical Proficiency & Credentials
+            </h2>
+            <div className="w-12 h-[2px] bg-[#FF2A2A] mx-auto lg:mx-0 mt-4" />
+            <p className="mt-4 text-zinc-400 text-sm md:text-base font-light max-w-2xl">
+              Algorithmic mastery in Java & Python, distributed event systems, computer vision pipelines, and 21+ verified hackathon & institutional credentials.
+            </p>
+          </div>
+
+          {/* Persona Card: Code • Build • Repeat */}
+          <div className="lg:col-span-4 flex justify-center lg:justify-end">
+            <div className="relative group p-3.5 rounded-3xl bg-zinc-950/80 border border-white/10 hover:border-[#FF2A2A]/40 transition-all shadow-xl flex items-center gap-4 max-w-sm w-full">
+              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border border-white/10 shrink-0 bg-zinc-900">
+                <img 
+                  src="/persona/skills_coding.png" 
+                  alt="Srinivas Palnati - Code Build Repeat" 
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="text-left space-y-1">
+                <span className="inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider text-[#FF2A2A] font-bold bg-[#FF2A2A]/10 px-2 py-0.5 rounded-full border border-[#FF2A2A]/20">
+                  <Sparkles className="w-2.5 h-2.5" />
+                  Code • Build • Repeat
+                </span>
+                <h4 className="text-sm sm:text-base font-bold text-white font-display">Engineering Depth</h4>
+                <p className="text-xs text-zinc-400 font-light leading-relaxed">
+                  24+ core competencies across DSA, backend architecture & AI models.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Skills Categories Grid */}

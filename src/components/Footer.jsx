@@ -73,20 +73,45 @@ export default function Footer({ onOpenResume }) {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10 flex-grow flex flex-col justify-between">
         
-        {/* Contact Section Header */}
-        <div className="text-left mb-14">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full border border-[#FF2A2A]/40 bg-[#FF2A2A]/10 text-xs uppercase tracking-widest text-[#FF2A2A] font-mono font-bold mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-[#FF2A2A]" />
-            <span>Direct Channels • Let's Build Together</span>
+        {/* Contact Section Header with Persona */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-14">
+          <div className="lg:col-span-8 text-left">
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full border border-[#FF2A2A]/40 bg-[#FF2A2A]/10 text-xs uppercase tracking-widest text-[#FF2A2A] font-mono font-bold mb-4">
+              <Sparkles className="w-3.5 h-3.5 text-[#FF2A2A]" />
+              <span>Direct Channels • Let's Build Together</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-white uppercase leading-tight">
+              Ready to Build Next-Gen Systems? <span className="text-[#FF2A2A]">Let's Talk.</span>
+            </h2>
+            
+            <p className="mt-3 text-base sm:text-lg text-zinc-300 font-light max-w-2xl">
+              Currently interviewing for <strong className="text-white font-medium">Software Engineering Roles & AI Systems</strong> positions. Reach out directly through any channel below:
+            </p>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tight text-white uppercase leading-tight max-w-3xl">
-            Ready to Build Next-Gen Systems? <span className="text-[#FF2A2A]">Let's Talk.</span>
-          </h2>
-          
-          <p className="mt-3 text-base sm:text-lg text-zinc-300 font-light max-w-2xl">
-            Currently interviewing for <strong className="text-white font-medium">Software Engineering Roles & AI Systems</strong> positions. Reach out directly through any channel below:
-          </p>
+          {/* Persona Card: Let's Connect */}
+          <div className="lg:col-span-4 flex justify-center lg:justify-end">
+            <div className="relative group p-3.5 rounded-3xl bg-zinc-950/80 border border-white/10 hover:border-[#FF2A2A]/40 transition-all shadow-xl flex items-center gap-4 max-w-sm w-full">
+              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border border-white/10 shrink-0 bg-zinc-900">
+                <img 
+                  src="/persona/contact_connect.png" 
+                  alt="Srinivas Palnati - Let's Connect" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="text-left space-y-1">
+                <span className="inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  Available Now
+                </span>
+                <h4 className="text-sm sm:text-base font-bold text-white font-display">Let's Connect</h4>
+                <p className="text-xs text-zinc-400 font-light leading-relaxed">
+                  Open to full-time engineering roles, high-impact collaborations & chats.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* High-Visibility Contact & Connect Cards Grid */}
