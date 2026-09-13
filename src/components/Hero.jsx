@@ -365,15 +365,17 @@ export default function Hero({ onOpenResume }) {
                 {/* Inner Card Body */}
                 <div className="relative w-full h-full rounded-[2.4rem] overflow-hidden bg-zinc-950 flex flex-col justify-between">
                   
-                  {/* High-Resolution Developer Portrait */}
-                  <img
-                    src="/persona/hero_suit.png"
-                    alt="Palnati Pushpa Naga Venkata Srinivas"
-                    className="absolute inset-0 w-full h-full object-cover object-[center_12%] brightness-105 scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
+                  {/* High-Resolution Developer Portrait - 2D Transparent Cutout */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-zinc-900/60 via-zinc-950/80 to-zinc-950 flex items-end justify-center">
+                    <img
+                      src="/persona/hero_suit.png"
+                      alt="Palnati Pushpa Naga Venkata Srinivas"
+                      className="w-full h-[95%] object-contain object-bottom brightness-105 drop-shadow-[0_15px_25px_rgba(0,0,0,0.85)] scale-100 group-hover:scale-105 transition-transform duration-700 ease-out z-10"
+                    />
+                  </div>
 
                   {/* Smooth Studio Vignette Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/40 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none z-15" />
 
                   {/* Subtle Interactive Glare */}
                   <motion.div 

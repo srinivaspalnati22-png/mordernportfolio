@@ -326,11 +326,11 @@ export default function Skills({ onOpenResume }) {
           {/* Persona Card: Code • Build • Repeat */}
           <div className="lg:col-span-4 flex justify-center lg:justify-end">
             <div className="relative group p-3.5 rounded-3xl bg-zinc-950/80 border border-white/10 hover:border-[#FF2A2A]/40 transition-all shadow-xl flex items-center gap-4 max-w-sm w-full">
-              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border border-white/10 shrink-0 bg-zinc-900">
+              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border border-white/10 shrink-0 bg-gradient-to-b from-zinc-800/40 via-zinc-900/60 to-zinc-950 flex items-end justify-center p-1">
                 <img 
                   src="/persona/skills_coding.png" 
                   alt="Srinivas Palnati - Code Build Repeat" 
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-contain object-bottom drop-shadow-[0_8px_16px_rgba(0,0,0,0.8)] group-hover:scale-105 transition-transform duration-500 z-10"
                 />
               </div>
               <div className="text-left space-y-1">
